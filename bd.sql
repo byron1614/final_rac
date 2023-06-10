@@ -1,76 +1,129 @@
 -- Creación de la tabla Alumnos
 CREATE TABLE Alumnos(
-  alum_ID INT PRIMARY KEY,
-  alum_Nombre VARCHAR(60),
-  alum_Grado VARCHAR(60),
-  alum_Arma VARCHAR(60),
-  alum_Nacionalidad VARCHAR(60)
+  alum_ID SERIAL PRIMARY KEY,
+  alum_Nombre VARCHAR(60) NOT NULL,
+  alum_apellido  VARCHAR(60) NOT NULL,
+  alum_Grado VARCHAR(60) NOT NULL,
+  alum_Arma VARCHAR(60) NOT NULL,
+  alum_Nacionalidad VARCHAR(60) NOT NULL,
+  detalle_situacion CHAR (1) DEFAULT '1'
 );
 
 -- Creación de la tabla Materias
 CREATE TABLE Materias (
-  mate_ID INT PRIMARY KEY,
-  mate_Nombre VARCHAR(70)
+  mate_ID SERIAL PRIMARY KEY,
+  mate_Nombre VARCHAR(70) NOT NULL,
+  detalle_situacion CHAR (1) DEFAULT '1'
 );
 
--- Creación de la tabla Notas
-CREATE TABLE Notas (
-  not_ID INT PRIMARY KEY,
-  not_ID_Alumno INT,
-  not_ID_Materia INT,
-  not_Punteo FLOAT,
-  FOREIGN KEY (not_ID_Alumno) REFERENCES Alumnos(alum_ID),
-  FOREIGN KEY (not_ID_Materia) REFERENCES Materias(mate_ID)
+--tabla de realcion materia alumnos 
+CREATE TABLE relacion_mate_alum (
+  id_mate_alum SERIAL PRIMARY KEY,
+  mate_alumno INT NOT NULL,
+  mate_materia INT NOT NULL,
+  FOREIGN KEY (mate_alumno) REFERENCES Alumnos(alum_ID),
+  FOREIGN KEY (mate_materia) REFERENCES Materias(mate_ID)
 );
 
 -- Creación de la tabla Resultados
 CREATE TABLE Resultados (
-  res_ID INT PRIMARY KEY,
-  res_ID_Alumno INT,
-  res_ID_Materia INT,
-  res_Numero INT,
-  res_Punteo FLOAT,
+  res_ID SERIAL PRIMARY KEY,
+  res_Alumno INT NOT NULL,
+  res_Materia INT NOT NULL,
+  res_Punteo FLOAT NOT NULL,
   res_Resultado VARCHAR(10),
-  FOREIGN KEY (res_ID_Alumno) REFERENCES Alumnos(alum_ID),
-  FOREIGN KEY (res_ID_Materia) REFERENCES Materias(mate_ID)
+  detalle_situacion CHAR (1) DEFAULT '1',
+  FOREIGN KEY (res_Alumno) REFERENCES Alumnos(alum_ID),
+  FOREIGN KEY (res_Materia) REFERENCES Materias(mate_ID)
 );
 
--- Inserción de un alumno
-INSERT INTO Alumnos (ID, Nombre, GradoMilitar, Nacionalidad)
-VALUES (1, 'John Doe', 'Sargento', 'Estados Unidos');
+-- Inserción de datos en la tabla Alumnos
+INSERT INTO Alumnos (alum_Nombre, alum_apellido, alum_Grado, alum_Arma, alum_Nacionalidad)
+VALUES ('Jorge Byron', 'Rac Chamale', 'Subteniente', 'infanteria', 'Guatemalteco');
 
--- Inserción de una materia
-INSERT INTO Materias (ID, Nombre)
-VALUES (1, 'Matemáticas');
-
--- Inserción de una nota
-INSERT INTO Notas (ID, ID_Alumno, ID_Materia, Punteo)
-VALUES (1, 1, 1, 8.5);
-
--- Asignación de un alumno a una materia
-INSERT INTO Resultados (ID, ID_Alumno, ID_Materia, Numero, Punteo, Estado)
-VALUES (1, 1, 1, 1, 8.5, 'Ganó');
-
-SELECT Alumnos.Nombre, Alumnos.GradoMilitar, Alumnos.Nacionalidad, Resultados.Numero, Materias.Nombre, Resultados.Punteo, Resultados.Estado
-FROM Alumnos
-JOIN Resultados ON Alumnos.ID = Resultados.ID_Alumno
-JOIN Materias ON Resultados.ID_Materia = Materias.ID
-ORDER BY Alumnos.Nombre, Materias.Nombre, Resultados.Numero;
+INSERT INTO Alumnos (alum_Nombre, alum_apellido, alum_Grado, alum_Arma, alum_Nacionalidad)
+VALUES ('Dany', 'Cornelio Farias', 'Teniente', 'Artilleria', 'Dominicano');
 
 
-SELECT Alumnos.Nombre, AVG(Resultados.Punteo) AS Promedio
-FROM Alumnos
-JOIN Resultados ON Alumnos.ID = Resultados.ID_Alumno
-GROUP BY Alumnos.Nombre;
+-- Inserción de datos en la tabla Materias
+INSERT INTO Materias (mate_Nombre)
+VALUES ('Matemáticas');
 
--- Inserción de más materias
-INSERT INTO Materias (ID, Nombre)
-VALUES (2, 'Ciencias');
-INSERT INTO Materias (ID, Nombre)
-VALUES (3, 'Historia');
+INSERT INTO Materias (mate_Nombre)
+VALUES ('Historia');
 
 
-INSERT INTO Resultados (ID, ID_Alumno, ID_Materia, Numero, Punteo, Estado)
-VALUES (2, 1, 2, 1, 7.9, 'Ganó');
-INSERT INTO Resultados (ID, ID_Alumno, ID_Materia, Numero, Punteo, Estado)
-VALUES (3, 1, 3, 1, 6.8, 'Perdió');
+-- Inserción de datos en la tabla relacion_mate_alum
+INSERT INTO relacion_mate_alum (mate_alumno, mate_materia)
+VALUES (1, 1);
+
+INSERT INTO relacion_mate_alum (mate_alumno, mate_materia)
+VALUES (2, 2);
+
+
+-- Inserción de datos en la tabla Resultados
+INSERT INTO Resultados (res_Alumno, res_Materia, res_Punteo, res_Resultado)
+VALUES (1, 1, 95.5, 'Aprobado');
+
+INSERT INTO Resultados (res_Alumno, res_Materia, res_Punteo, res_Resultado)
+VALUES (2, 2, 88.0, 'Aprobado');
+
+
+/querys/
+
+SELECT alumnos.alum_Nombre || ' ' || alumnos.alum_apellido as Nombre,
+alumnos.alum_Grado, alumnos.alum_Arma, alumnos.alum_Nacionalidad, materias.mate_Nombre,
+resultados.res_Punteo, resultados.res_Resultado
+FROM alumnos
+JOIN resultados ON alumnos.alum_ID = resultados.res_Alumno
+JOIN materias ON resultados.res_Materia = materias.mate_ID
+ORDER BY alumnos.alum_Nombre, materias.mate_Nombre, resultados.res_ID;
+
+
+
+SELECT alumnos.alum_nombre || ' ' || alumnos.alum_apellido AS Nombre, AVG(resultados.res_Punteo) AS Promedio
+FROM alumnos
+JOIN resultados ON alumnos.alum_ID = resultados.res_Alumno
+GROUP BY alumnos.alum_nombre, alumnos.alum_apellido;
+
+
+***************************************************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
