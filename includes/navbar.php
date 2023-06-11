@@ -11,7 +11,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Ventas
+                        CALIFICACIONES
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
@@ -27,7 +27,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Productos
+                    MATERIAS
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
@@ -40,7 +40,7 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Clientes
+                        ALUMNOS
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
