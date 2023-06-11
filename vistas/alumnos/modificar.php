@@ -16,7 +16,7 @@ require '../../modelos/Alumnos.php';
         <h1 class="text-center">MODIFICAR ALUMNO</h1>
         <div class="row justify-content-center">
             <form action="/fianal_rac/controladores/alumnos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="cliente_id">
+                <input type="hidden" name="alum_id">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="alum_nombre">NOMBRE DEL ALUMNO</label>
