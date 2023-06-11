@@ -13,13 +13,6 @@ require '../../modelos/Alumnos.php';
     }
 
 
-
-// if($resultado){
-//     echo "Guardado exitosamente";
-// }else{
-//     echo "Ocurrió un error: $error";
-// }
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
