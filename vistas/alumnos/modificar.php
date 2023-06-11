@@ -31,6 +31,18 @@ require '../../modelos/Alumnos.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
+                        <label for="alum_grado">GRADO DEL ALUMNO</label>
+                        <input type="text" name="alum_grado" id="alum_grado" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="alum_arma">ARMA DEL ALUMNO</label>
+                        <input type="text" name="alum_arma" id="alum_arma" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
                         <label for="alum_nacionalidad">NACIONALIDAD</label>
                         <input type="text" name="alum_nacionalidad" id="alum_nacionalidad" class="form-control" required>
                     </div>

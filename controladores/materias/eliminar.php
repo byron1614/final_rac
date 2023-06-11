@@ -12,7 +12,6 @@ require '../../modelos/Materias.php';
         $error = $e2->getMessage();
     }
 
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
