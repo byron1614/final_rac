@@ -15,13 +15,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/notas/index.php">CALIFICACIONES</a>
+                            <a class="nav-link" href="/final_rac/vistas/notas/index.php">INGRESAR CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/notas/buscar.php">MATERIAS</a>
+                            <a class="nav-link" href="/final_rac/vistas/notas/buscar.php">BUSCAR CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/controladores/materias/detalle_materias.php">ALUMNOS</a>
+                            <a class="nav-link" href="/final_rac/controladores/materias/detalle_materias.php">DETALLE DE CALIFICACIONES</a>
                         </li>
                     </ul>
                 </li>
