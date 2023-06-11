@@ -2,14 +2,14 @@
 require '../../modelos/Alumnos.php';
 
 
-if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){
+if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma'] != '' && $_POST['alum_nacionalidad'] != ''){
 
 
 
     try {
         $alumno = new Alumno($_POST);
         $resultado = $alumno->guardar();
-        $error = "NO se guardó correctamente";
+        $error = "No se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -47,7 +47,7 @@ if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_gra
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
