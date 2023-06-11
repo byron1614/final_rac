@@ -1,14 +1,14 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Materias.php';
 
 
-if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
+if($_POST['mate_nombre']  != ''){
 
 
 
     try {
-        $producto = new Producto($_POST);
-        $resultado = $producto->guardar();
+        $materia = new Materia($_POST);
+        $resultado = $materia->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -18,13 +18,6 @@ if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
 }else{
     $error = "Debe llenar todos los datos";
 }
-
-
-// if($resultado){
-//     echo "Guardado exitosamente";
-// }else{
-//     echo "Ocurrió un error: $error";
-// }
 
 ?>
 <!DOCTYPE html>
@@ -54,7 +47,7 @@ if($_POST['producto_nombre'] != '' && $_POST['producto_precio'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/practica9/vistas/productos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
