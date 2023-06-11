@@ -1,11 +1,11 @@
 <?php
-require_once '../../modelos/Cliente.php';
-require_once '../../modelos/Producto.php';
+require_once '../../modelos/Alumnos.php';
+require_once '../../modelos/Materias.php';
     try {
-        $cliente = new Cliente();
-        $producto = new Producto();
-        $clientes = $cliente->buscar();
-        $productos = $producto->buscar();
+        $alumno = new Alumno();
+        $materia = new materia();
+        $alumnos = $alumno->buscar();
+        $materias = $materia->buscar();
             // var_dump($clientes);
             // exit;
     } catch (PDOException $e) {
@@ -17,12 +17,12 @@ require_once '../../modelos/Producto.php';
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
-        <h1 class="text-center">Formulario de ingreso de ventas</h1>
+        <h1 class="text-center">FORMULARIO DE INGRESO DE CALIFICACIONES</h1>
         <div class="row justify-content-center">
-            <form action="/practica9/controladores/ventas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/final_rac/controladores/notas/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="venta_cliente">Cliente</label>
+                        <label for="venta_cliente">ALUMNO</label>
                         <select name="venta_cliente" id="venta_cliente" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($clientes as $key => $cliente) : ?>
