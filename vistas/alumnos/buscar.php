@@ -1,25 +1,25 @@
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
     <div class="container">
-        <h1 class="text-center">Buscar alumnos</h1>
+        <h1 class="text-center">BUSCAR ALUMNO</h1>
         <div class="row justify-content-center">
-            <form action="/final_cornelio/controladores/alumnos/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_rac/controladores/alumnos/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="alu_nombre">Nombre</label>
-                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" required>
+                        <label for="alu_nombre">NOMBRE DEL ALUMNO</label>
+                        <input type="text" name="alum_nombre" id="alum_nombre" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="alu_apellido">Apellido</label>
-                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control">
+                        <label for="alum_apellido">APELLIDO DEL ALUMNO</label>
+                        <input type="text" name="alum_apellido" id="alum_apellido" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="alu_nac">Nacionalidad</label>
-                        <input type="text" name="alu_nac" id="alu_nac" class="form-control">
+                        <label for="alum_nacionalidad">NACIONALIDAD</label>
+                        <input type="text" name="alum_nacionalidad" id="alum_nacionalidad" class="form-control">
                     </div>
                 </div>
                 <div class="row mb-3">
