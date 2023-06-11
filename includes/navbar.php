@@ -21,7 +21,7 @@
                             <a class="nav-link" href="/final_rac/vistas/notas/buscar.php">BUSCAR CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/controladores/materias/detalle_materias.php">DETALLE DE CALIFICACIONES</a>
+                            <a class="nav-link" href="/final_rac/controladores/materias/detalle_notas.php">DETALLE DE CALIFICACIONES</a>
                         </li>
                     </ul>
                 </li>
