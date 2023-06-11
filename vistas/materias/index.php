@@ -3,7 +3,7 @@
     <div class="container">
         <h1 class="text-center">FORMULARIO PARA AGREGAR MATERIA</h1>
         <div class="row justify-content-center">
-            <form action="/practica9/controladores/productos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+            <form action="/final_rac/controladores/materias/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
                         <label for="mate_nombre">NOMBRE DE LA MATERIA</label>
