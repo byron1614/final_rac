@@ -1,14 +1,10 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Materias.php';
 try {
-    $producto = new Producto($_GET);
+    $materia = new Materia($_GET);
     
-    $productos = $producto->buscar();
-    // echo "<pre>";
-    // var_dump($productos);
-    // echo "</pre>";
-    // exit;
-    // $error = "NO se guardó correctamente";
+    $materias = $materia->buscar();
+
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2){
@@ -34,20 +30,18 @@ try {
                         <tr>
                             <th>NO. </th>
                             <th>NOMBRE</th>
-                            <th>PRECIO</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($productos) > 0):?>
-                        <?php foreach($productos as $key => $producto) : ?>
+                        <?php if(count($materias) > 0):?>
+                        <?php foreach($materias as $key => $materia) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $producto['PRODUCTO_NOMBRE'] ?></td>
-                            <td><?= $producto['PRODUCTO_PRECIO'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/practica9/vistas/productos/modificar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/practica9/controladores/productos/eliminar.php?producto_id=<?= $producto['PRODUCTO_ID']?>">Eliminar</a></td>
+                            <td><?= $producto['MATE_NOMBRE'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/materias/modificar.php?mate_id=<?= $materia['MATE_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/materias/eliminar.php?mate_id=<?= $materia['MTE_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -61,7 +55,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/practica9/vistas/productos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/materias/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
