@@ -1,14 +1,14 @@
 <?php
-require '../../modelos/Cliente.php';
+require '../../modelos/Alumnos.php';
 
 
-if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit'] != ''){
+if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma'] != '' && $_POST['alum_nacionalidad']!= ''){
 
 
 
     try {
-        $cliente = new Cliente($_POST);
-        $resultado = $cliente->guardar();
+        $alumno = new Alumno($_POST);
+        $resultado = $alumno->guardar();
         $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -54,7 +54,7 @@ if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/practica9/vistas/clientes/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
