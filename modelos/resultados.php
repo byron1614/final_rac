@@ -20,23 +20,24 @@ class Calificacion extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO calificaciones(calif_alumno, calif_materia, calif_punteo, calif_resultado) VALUES ('$this->calif_alumno', $this->calif_materia, $this->calif_punteo, '$this->calif_resultado')";
+        $sql = "INSERT INTO resultados(res_Alumno, res_Materia, res_Punteo, res_Resultado) VALUES ($this->calif_alumno, $this->calif_materia, $this->calif_punteo, '$this->calif_resultado')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
+
     public function buscar(){
-        $sql = "SELECT * FROM calificaciones WHERE detalle_situacion = '1'";
+        $sql = "SELECT * FROM resultados WHERE detalle_situacion = '1'";
 
         if($this->id_calificaciones != null){
-            $sql .= " AND id_calificaciones = $this->id_calificaciones";
+            $sql .= " AND res_ID = $this->id_calificaciones";
         }
 
         if($this->calif_alumno != ''){
-            $sql .= " AND calif_alumno = $this->calif_alumno";
+            $sql .= " AND res_Alumno = $this->calif_alumno";
         }
 
         if($this->calif_materia != ''){
-            $sql .= " AND calif_materia = $this->calif_materia";
+            $sql .= " AND res_Materia = $this->calif_materia";
         }
 
         $resultado = self::servir($sql);
@@ -44,14 +45,14 @@ class Calificacion extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE calificaciones SET calif_alumno = $this->calif_alumno, calif_materia = $this->calif_materia, calif_punteo = $this->calif_punteo, calif_resultado = '$this->calif_resultado' WHERE id_calificaciones = $this->id_calificaciones";
+        $sql = "UPDATE resultados SET res_Alumno = $this->calif_alumno, res_Materia = $this->calif_materia, res_Punteo = $this->calif_punteo, res_Resultado = '$this->calif_resultado' WHERE res_ID = $this->id_calificaciones";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
-        $sql = "UPDATE calificaciones SET detalle_situacion = '0' WHERE id_calificaciones = $this->id_calificaciones";
+        $sql = "UPDATE resultados SET detalle_situacion = '0' WHERE res_ID = $this->id_calificaciones";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
