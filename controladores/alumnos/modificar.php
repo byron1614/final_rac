@@ -1,14 +1,14 @@
 <?php
-require '../../modelos/Cliente.php';
+require '../../modelos/Alumno.php';
 
 
-if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cliente_id'] != ''){
+if($_POST['alum_nombre'] != '' && $_POST['alum_apellido']  != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma']!= '' && $_POST['alum_nacionalidad']!= '' ){
 
 
 
     try {
-        $cliente = new Cliente($_POST);
-        $resultado = $cliente->modificar();
+        $alumno = new Alumno($_POST);
+        $resultado = $alumno->modificar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -54,7 +54,7 @@ if($_POST['cliente_nombre'] != '' && $_POST['cliente_nit']  != '' && $_POST['cli
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/practica9/controladores/clientes/buscar.php?cliente_nombre=<?= $_POST['cliente_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/controladores/alumnos/buscar.php?alum_nombre=<?= $_POST['alum_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
