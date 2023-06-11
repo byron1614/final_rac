@@ -2,7 +2,7 @@
 require '../../modelos/Materias.php';
 
 
-if($_POST['ma_nombre'] != ''){
+if($_POST['mate_nombre'] != ''){
 
 
 
