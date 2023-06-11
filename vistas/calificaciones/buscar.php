@@ -17,14 +17,14 @@ require_once '../../modelos/Materias.php';
     <div class="container">
         <h1 class="text-center">Formulario de búsqueda de calificaciones</h1>
         <div class="row justify-content-center">
-            <form action="/final_cornelio/controladores/calificaciones/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
+            <form action="/final_rac/controladores/calificaciones/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="calif_alumno">Alumno</label>
-                        <select name="calif_alumno" id="calif_alumno" class="form-control">
+                        <label for="res_alumno">Alumno</label>
+                        <select name="res_alumno" id="res_alumno" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($alumnos as $key => $alumno) : ?>
-                                <option value="<?= $alumno['ID_ALUMNOS'] ?>"><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO'] ?></option>
+                                <option value="<?= $alumno['ALUM_ID'] ?>"><?= $alumno['ALUM_NOMBRE'] . ' ' . $alumno['ALUM_APELLIDO'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
