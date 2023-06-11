@@ -1,9 +1,9 @@
 <?php
-require '../../modelos/Producto.php';
+require '../../modelos/Materias.php';
     try {
-        $producto = new Producto($_GET);
+        $materia = new Materia($_GET);
 
-        $productos = $producto->buscar();
+        $materias = $materia->buscar();
         // echo "<pre>";
         // var_dump($productos[0]['PRODUCTO_ID']);
         // echo "</pre>";
@@ -17,20 +17,14 @@ require '../../modelos/Producto.php';
 ?>
 <?php include_once '../../includes/header.php'?>
     <div class="container">
-        <h1 class="text-center">Modificar Productos</h1>
+        <h1 class="text-center">MODIFICAR MATERIA</h1>
         <div class="row justify-content-center">
-            <form action="/practica9/controladores/productos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="producto_id" value="<?= $productos[0]['PRODUCTO_ID'] ?>" >
+            <form action="/final_rac/controladores/materias/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
+                <input type="hidden" name="mate_id" value="<?= $materias[0]['MATE_ID'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="producto_nombre">Nombre del producto</label>
-                        <input type="text" name="producto_nombre" id="producto_nombre" class="form-control" value="<?= $productos[0]['PRODUCTO_NOMBRE'] ?>">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="producto_precio">Precio del producto</label>
-                        <input type="number" step="0.01" min="0" name="producto_precio" id="producto_precio" class="form-control" value="<?= $productos[0]['PRODUCTO_PRECIO'] ?>">
+                        <label for="mate_nombre">NOMBRE DE LA MATERIA</label>
+                        <input type="text" name="mate_nombre" id="mate_nombre" class="form-control" value="<?= $materias[0]['MATE_NOMBRE'] ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
