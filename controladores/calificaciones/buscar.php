@@ -1,9 +1,9 @@
 <?php
-require_once '../../modelos/Calificaciones.php';
+require_once '../../modelos/Resultados.php';
 try {
-    $calificacion = new Calificacion($_GET);
+    $resultado = new Resultado($_GET);
     
-    $calificaciones = $calificacion->buscar();
+    $resultados = $resultado->buscar();
 
 } catch (PDOException $e) {
     $error = $e->getMessage();
@@ -36,12 +36,12 @@ try {
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($calificaciones) > 0):?>
-                        <?php foreach($calificaciones as $key => $calificacion) : ?>
+                        <?php if(count($resultados) > 0):?>
+                        <?php foreach($resultados as $key => $resultados) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $calificacion['ALU_NOMBRE'] . ' ' . $calificacion['ALU_NOMBRE']?></td>
-                            <td><a class="btn btn-info w-100" href="/final_cornelio/vistas/calificaciones/ptomedio.php?id_calificaciones=<?= $calificacion['ID_CALIFICACIONES']?>">VER DETALLE</a></td>
+                            <td><?= $resultado['ALUM_NOMBRE'] . ' ' . $resultado['ALUM_NOMBRE']?></td>
+                            <td><a class="btn btn-info w-100" href="/final_rac/vistas/calificaciones/resultado.php?res_id=<?= $resultado['res_id']?>">VER DETALLE</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -55,7 +55,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/calificaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/calificaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

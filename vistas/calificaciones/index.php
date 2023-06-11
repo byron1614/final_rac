@@ -20,14 +20,14 @@ try {
 <div class="container">
     <h1 class="text-center">Formulario de ingreso de calificaciones</h1>
     <div class="row justify-content-center">
-        <form action="/final_cornelio/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+        <form action="/final_rac/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="calif_alumno">Alumno</label>
-                    <select name="calif_alumno" id="calif_alumno" class="form-control">
+                    <label for="res_alumno">Alumno</label>
+                    <select name="res_alumno" id="res_alumno" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($alumnos as $key => $alumno) : ?>
-                            <option value="<?= $alumno['ID_ALUMNOS'] ?>"><?= $alumno['ALU_NOMBRE'] . ' ' . $alumno['ALU_APELLIDO'] ?></option>
+                            <option value="<?= $alumno['ALUM_ID'] ?>"><?= $alumno['ALUM_NOMBRE'] . ' ' . $alumno['ALUM_APELLIDO'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
@@ -45,27 +45,13 @@ try {
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label for="calificacion1">Punteo</label>
+                    <label for="calificacion1">PUNTEO DEL ALUMNO</label>
                     <input type="number" step="any" name="calif_punteo[]" id="calificacion1" class="form-control">
                 </div>
-            </div>
-            <!-- <div class="row mb-3">
-                <div class="col-lg-4">
-                    <label for="resultado1">Resultado</label>
-                    <select name="calif_resultados[]" id="resultado1" class="form-control">
-                        <option value="">SELECCIONE...</option>
-                        <option value="gano">Ganó</option>
-                        <option value="perdio">Perdió</option>
-                    </select>
                 </div>
-            </div> -->
-            <!-- <button type="submit" class="btn btn-primary">Guardar</button>
-        </form> -->
-    </div>
-</div>
-                <!-- <div class="row mb-3">
+                <div class="row mb-3">
                     <div class="col-lg-8">
-                        <label for="materia2">Segunda materia</label>
+                        <label for="materia2">MATERIA 1</label>
                         <select name="materia[]" id="materia2" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($materias as $key => $materia) : ?>
@@ -74,7 +60,7 @@ try {
                         </select>
                     </div>
                     <div class="col-lg-4">
-                        <label for="calificacion2">Calificacion</label>
+                        <label for="calificacion2">RESULTADO</label>
                         <input type="number" step="any" name="calif_punteo[]" id="calificacion2" class="form-control">
                     </div>
                 </div>
@@ -122,7 +108,7 @@ try {
                         <label for="calificacion5">Calificacion</label>
                         <input type="number" step="any" name="calif_punteo[]" id="calificacion5" class="form-control">
                     </div>
-                </div> -->
+                </div>
                 <div class="row mb-3">
                     <div class="col">
                         <button type="submit" class="btn btn-primary w-100">Guardar</button>
