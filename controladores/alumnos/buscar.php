@@ -1,9 +1,9 @@
 <?php
 require '../../modelos/Alumnos.php';
 try {
-    $alumnos = new Alumnos($_GET);
+    $alumno = new Alumno($_GET);
     
-    $alumnoss = $alumnos->buscar();
+    $alumnos = $alumno->buscar();
     // echo "<pre>";
     // var_dump($clientes);
     // echo "</pre>";
@@ -34,19 +34,26 @@ try {
                         <tr>
                             <th>NO.</th>
                             <th>NOMBRE</th>
-                            <th>GRADO Y ARMA</th>
+                            <th>APELLIDO</th>
+                            <th>GRADO</th>
+                            <th>ARMA</th>
                             <th>NACIONALIDAD</th>
+                            <th>MODIFICAR</th>
+                            <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php if(count($alumnos) > 0):?>
-                        <?php foreach($alumnos as $key => $alumnos) : ?>
+                        <?php foreach($alumnos as $key => $alumno) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $alumnos['ALUMNO_NOMBRE'] ?></td>
-                            <td><?= $alumnos['ALUMNO_GRADO Y ARMA'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/practica9/vistas/clientes/modificar.php?cliente_id=<?= $cliente['CLIENTE_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/practica9/controladores/clientes/eliminar.php?cliente_id=<?= $cliente['CLIENTE_ID']?>">Eliminar</a></td>
+                            <td><?= $alumno['ALUM_NOMBRE'] ?></td>
+                            <td><?= $alumno['ALUM_APELLIDO'] ?></td>
+                            <td><?= $alumno['ALUM_GRADO'] ?></td>
+                            <td><?= $alumno['ALUM_ARMA'] ?></td>
+                            <td><?= $alumno['ALUM_NACIONALIDAD'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?alum_id=<?= $alumnos['ALUMNOS_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?alum_id=<?= $alumnos['ALUMNOS_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
