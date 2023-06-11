@@ -18,7 +18,7 @@ try {
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container">
-    <h1 class="text-center">Formulario de ingreso de calificaciones</h1>
+    <h1 class="text-center">FORMULARIO DE INGRESO DE CALIFICACIONES</h1>
     <div class="row justify-content-center">
         <form action="/final_rac/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
@@ -40,13 +40,13 @@ try {
                     <select name="materia[]" id="materia1" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($materias as $key => $materia) : ?>
-                            <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
+                            <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MATE_NOMBRE'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
                 <div class="col-lg-4">
                     <label for="calificacion1">PUNTEO DEL ALUMNO</label>
-                    <input type="number" step="any" name="calif_punteo[]" id="calificacion1" class="form-control">
+                    <input type="number" step="any" name="res_punteo[]" id="calificacion1" class="form-control">
                 </div>
                 </div>
                 <div class="row mb-3">
@@ -55,7 +55,7 @@ try {
                         <select name="materia[]" id="materia2" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
+                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -70,7 +70,7 @@ try {
                         <select name="materia[]" id="materia3" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE']?></option>
+                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE']?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -85,7 +85,7 @@ try {
                         <select name="materia[]" id="materia4" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
+                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
@@ -100,7 +100,7 @@ try {
                         <select name="materia[]" id="materia5" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
+                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
                             <?php endforeach?>
                         </select>
                     </div>
