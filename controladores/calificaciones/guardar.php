@@ -1,6 +1,6 @@
 <?php
-require_once '../../modelos/Calificaciones.php';
-require_once '../../modelos/RelacionMatAlum.php';
+require_once '../../modelos/Resultados.php';
+require_once '../../modelos/Rel_mate_alum.php';
 
 $materias = array_filter($_POST['materias']);
 $calif_punteo = array_filter($_POST['calif_punteo']);
@@ -64,7 +64,7 @@ if($_POST['calificacion_cliente'] != '' && $_POST['calificacion_fecha'] != '' &&
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/calificaciones/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

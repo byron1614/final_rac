@@ -47,19 +47,19 @@ require '../../modelos/Alumnos.php';
                <tr>
             <td><strong>NOMBRE:</strong></td>
             <?php foreach ($promedio as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALU_NOMBRE'] . ' ' . $calificacion['ALU_APELLIDO'] ?></td>
+                <td><?= $calificacion['ALUM_NOMBRE'] . ' ' . $calificacion['ALU_APELLIDO'] ?></td>
             <?php endforeach ?>
         </tr>
         <tr>
             <td><strong>GRADO:</strong></td>
             <?php foreach ($promedio as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALU_GRADO'] ?></td>
+                <td><?= $calificacion['ALUM_GRADO'] ?></td>
             <?php endforeach ?>
         </tr>
         <tr>
             <td><strong>ARMA:</strong></td>
             <?php foreach ($promedio as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALU_ARMA'] ?></td>
+                <td><?= $calificacion['ALUM_ARMA'] ?></td>
             <?php endforeach ?>
         </tr>
         <tr>
