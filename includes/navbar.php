@@ -4,10 +4,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Tienda virtual</a>
+            <a class="navbar-brand" href="#">ESCUELA DE INFORMATICA</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">INICIO</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -15,13 +15,13 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/ventas/index.php">Ingresar venta</a>
+                            <a class="nav-link" href="/practica9/vistas/ventas/index.php">CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/ventas/buscar.php">Buscar venta</a>
+                            <a class="nav-link" href="/practica9/vistas/ventas/buscar.php">MATERIAS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/controladores/ventas/detalle_ventas.php">Detalle de venta</a>
+                            <a class="nav-link" href="/practica9/controladores/ventas/detalle_ventas.php">ALUMNOS</a>
                         </li>
                     </ul>
                 </li>
@@ -31,10 +31,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/productos/index.php">Crear producto</a>
+                            <a class="nav-link" href="/practica9/vistas/productos/index.php">CREAR MATERIA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/productos/buscar.php">Buscar producto</a>
+                            <a class="nav-link" href="/practica9/vistas/productos/buscar.php">BUSCAR MATERIA</a>
                         </li>
                     </ul>
                 </li>
@@ -44,10 +44,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/clientes/index.php">Crear cliente</a>
+                            <a class="nav-link" href="/practica9/vistas/clientes/index.php">CREAR ALUMNO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/clientes/buscar.php">Buscar cliente</a>
+                            <a class="nav-link" href="/practica9/vistas/clientes/buscar.php">BUSCAR ALUMNO</a>
                         </li>
                     </ul>
                 </li>
