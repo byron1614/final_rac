@@ -1,10 +1,10 @@
 <?php
-require '../../modelos/Cliente.php';
+require '../../modelos/Alumnos.php';
 
 
     try {
-        $cliente = new Cliente($_GET);
-        $resultado = $cliente->eliminar();
+        $alumno = new Alumno($_GET);
+        $resultado = $alumno->eliminar();
 
     } catch (PDOException $e) {
         $error = $e->getMessage();
