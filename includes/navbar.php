@@ -31,10 +31,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/productos/index.php">CREAR MATERIA</a>
+                            <a class="nav-link" href="/final_rac/vistas/materias/index.php">CREAR MATERIA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/productos/buscar.php">BUSCAR MATERIA</a>
+                            <a class="nav-link" href="/final_rac/vistas/materias/buscar.php">BUSCAR MATERIA</a>
                         </li>
                     </ul>
                 </li>
@@ -44,10 +44,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/clientes/index.php">CREAR ALUMNO</a>
+                            <a class="nav-link" href="/final_rac/vistas/alumnos/index.php">CREAR ALUMNO</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/practica9/vistas/clientes/buscar.php">BUSCAR ALUMNO</a>
+                            <a class="nav-link" href="/final_rac/vistas/alumnos/buscar.php">BUSCAR ALUMNO</a>
                         </li>
                     </ul>
                 </li>
