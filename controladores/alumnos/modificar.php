@@ -1,11 +1,14 @@
 <?php
-require '../../modelos/Alumno.php';
+require '../../modelos/Alumnos.php';
+
 
 if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma'] != '' && $_POST['alum_nacionalidad'] != ''){
 
 
+
     try {
         $alumno = new Alumno($_POST);
+        
         $resultado = $alumno->modificar();
 
     } catch (PDOException $e) {
@@ -16,13 +19,6 @@ if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_
 }else{
     $error = "Debe llenar todos los datos";
 }
-
-
-// if($resultado){
-//     echo "Guardado exitosamente";
-// }else{
-//     echo "Ocurrió un error: $error";
-// }
 
 ?>
 <!DOCTYPE html>
