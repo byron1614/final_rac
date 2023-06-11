@@ -3,24 +3,23 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 require '../../modelos/Resultados.php';
-require '../../modelos/rel_mat_alum.php';
+require '../../modelos/Detalle.php';
     try {
-        $id = $_GET['venta_id'];
-        $venta = new Venta($_GET);
+        $id = $_GET['res_id'];
+        $resultado = new Resultado($_GET);
         $detalle = new Detalle([
-            'detalle_venta' => $id
+            'res_materia' => $id
         ]);
 
-        $ventas = $venta->buscar();
-        $productos = $detalle->buscar();
+        $resultado = $resultado->buscar();
+        $materias = $detalle->buscar();
         echo "<pre>";
-        var_dump($ventas);
+        var_dump($resultado);
         echo "</pre>";
         echo "<pre>";
-        var_dump($productos);
+        var_dump($materias);
         echo "</pre>";
         exit;
-        // $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
