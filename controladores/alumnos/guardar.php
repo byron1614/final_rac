@@ -1,7 +1,9 @@
 <?php
 require '../../modelos/Alumnos.php';
 
-if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma'] != '' && $_POST['alum_nacionalidad'] != ''){
+
+if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){
+
 
 
     try {
@@ -16,13 +18,6 @@ if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_
 }else{
     $error = "Debe llenar todos los datos";
 }
-
-
-// if($resultado){
-//     echo "Guardado exitosamente";
-// }else{
-//     echo "Ocurrió un error: $error";
-// }
 
 ?>
 <!DOCTYPE html>
@@ -52,7 +47,7 @@ if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_cornelio/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

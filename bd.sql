@@ -39,7 +39,7 @@ CREATE TABLE Resultados (
 
 -- Inserción de datos en la tabla Alumnos
 INSERT INTO Alumnos (alum_Nombre, alum_apellido, alum_Grado, alum_Arma, alum_Nacionalidad)
-VALUES ('Jorge Byron', 'Rac Chamale', 'Subteniente', 'infanteria', 'Guatemalteco');
+VALUES ('Bryan Daniel', 'Marin Arana', 'Alferez de fragata', 'infanteria de marina', 'Guatemalteco');
 
 INSERT INTO Alumnos (alum_Nombre, alum_apellido, alum_Grado, alum_Arma, alum_Nacionalidad)
 VALUES ('Dany', 'Cornelio Farias', 'Teniente', 'Artilleria', 'Dominicano');

@@ -1,16 +1,40 @@
 <?php
-require '../../modelos/Alumno.php';
+require_once '../../modelos/Calificaciones.php';
+require_once '../../modelos/RelacionMatAlum.php';
+
+$materias = array_filter($_POST['materias']);
+$calif_punteo = array_filter($_POST['calif_punteo']);
+if($_POST['calificacion_cliente'] != '' && $_POST['calificacion_fecha'] != '' && count($materias)>0 && count($calif_punteo)>0){
+
+    
 
 
     try {
-        $alumno = new Alumno($_GET);
-        $resultado = $alumno->eliminar();
+        $calificacion = new Calificacion($_POST);
+        $resultado = $calificacion->guardar();
+        $idInsertado = $resultado['id'];
+        $i = 0;
+        foreach ($materias as $key => $producto) {
+            $relacionmatalum = new RelacionMatAlum([
+                'detalle_calificacion' => $idInsertado,
+                'detalle_materia' => $producto,
+                'detalle_punteo' => $calif_punteo[$i]
+            ]);
+            $relacionmatalum->guardar();
+            $i++;
 
+        }
+
+        
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
+}else{
+    $error = "Debe llenar todos los datos y seleccionar al menos un producto";
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -28,7 +52,7 @@ require '../../modelos/Alumno.php';
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        Eliminado exitosamente!
+                        Guardado exitosamente!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
@@ -40,7 +64,7 @@ require '../../modelos/Alumno.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/controladores/alumnos/buscar.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_cornelio/vistas/calificaciones/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
