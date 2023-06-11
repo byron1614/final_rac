@@ -2,8 +2,8 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-require '../../modelos/Venta.php';
-require '../../modelos/Detalle.php';
+require '../../modelos/Resultados.php';
+require '../../modelos/rel_mat_alum.php';
     try {
         $id = $_GET['venta_id'];
         $venta = new Venta($_GET);

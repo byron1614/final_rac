@@ -4,11 +4,7 @@ try {
     $alumno = new Alumno($_GET);
     
     $alumnos = $alumno->buscar();
-    // echo "<pre>";
-    // var_dump($clientes);
-    // echo "</pre>";
-    // exit;
-    // $error = "NO se guardó correctamente";
+
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2){
@@ -32,7 +28,7 @@ try {
                 <table class="table table-bordered table-hover">
                     <thead class="table-dark">
                         <tr>
-                            <th>NO.</th>
+                            <th>NO. </th>
                             <th>NOMBRE</th>
                             <th>APELLIDO</th>
                             <th>GRADO</th>
@@ -52,8 +48,8 @@ try {
                             <td><?= $alumno['ALUM_GRADO'] ?></td>
                             <td><?= $alumno['ALUM_ARMA'] ?></td>
                             <td><?= $alumno['ALUM_NACIONALIDAD'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?alum_id=<?= $alumnos['ALUMNOS_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?alum_id=<?= $alumnos['ALUMNOS_ID']?>">Eliminar</a></td>
+                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?alum_id=<?= $alumno['ALUM_ID']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?alum_id=<?= $alumno['ALUM_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -67,7 +63,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/practica9/vistas/clientes/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
