@@ -2,36 +2,36 @@
 require_once 'Conexion.php';
 
 class Alumno extends Conexion{
-    public $id_alumnos;
-    public $alu_nombre;
-    public $alu_apellido;
-    public $alu_grado;
-    public $alu_arma;
-    public $alu_nac;
+    public $alum_ID;
+    public $alum_Nombre;
+    public $alum_apellido;
+    public $alum_Grado;
+    public $alum_Arma;
+    public $alum_Nacionalidad;
     public $detalle_situacion;
 
     public function __construct($args = [] )
     {
-        $this->id_alumnos = $args['id_alumnos'] ?? null;
-        $this->alu_nombre = $args['alu_nombre'] ?? '';
-        $this->alu_apellido = $args['alu_apellido'] ?? '';
-        $this->alu_grado = $args['alu_grado'] ?? '';
-        $this->alu_arma = $args['alu_arma'] ?? '';
-        $this->alu_nac = $args['alu_nac'] ?? '';
+        $this->alum_ID = $args['alum_ID'] ?? null;
+        $this->alum_Nombre = $args['alum_Nombre'] ?? '';
+        $this->alum_apellido = $args['alum_apellido'] ?? '';
+        $this->alum_Grado = $args['alum_Grado'] ?? '';
+        $this->alum_Arma = $args['alum_Arma'] ?? '';
+        $this->alum_Nacionalidad = $args['alum_Nacionalidad'] ?? '';
         $this->detalle_situacion = $args['detalle_situacion'] ?? '1';
     }
 
     public function guardar(){
-        $sql = "INSERT INTO alumnos(alu_nombre, alu_apellido, alu_grado, alu_arma, alu_nac) VALUES ('$this->alu_nombre', '$this->alu_apellido', '$this->alu_grado', '$this->alu_arma', '$this->alu_nac')";
+        $sql = "INSERT INTO Alumnos(alum_Nombre, alum_apellido, alum_Grado, alum_Arma, alum_Nacionalidad) VALUES ('$this->alum_Nombre', '$this->alum_apellido', '$this->alum_Grado', '$this->alum_Arma', '$this->alum_Nacionalidad')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
-        $sql = "SELECT * FROM alumnos WHERE detalle_situacion = '1'";
+        $sql = "SELECT * FROM Alumnos WHERE detalle_situacion = '1'";
 
-        if($this->id_alumnos != null){
-            $sql .= " AND id_alumnos = $this->id_alumnos";
+        if($this->alum_ID != null){
+            $sql .= " AND alum_ID = $this->alum_ID";
         }
 
         $resultado = self::servir($sql);
@@ -39,16 +39,17 @@ class Alumno extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE alumnos SET alu_nombre = '$this->alu_nombre', alu_apellido = '$this->alu_apellido', alu_grado = '$this->alu_grado', alu_arma = '$this->alu_arma', alu_nac = '$this->alu_nac' WHERE id_alumnos = $this->id_alumnos";
+        $sql = "UPDATE Alumnos SET alum_Nombre = '$this->alum_Nombre', alum_apellido = '$this->alum_apellido', alum_Grado = '$this->alum_Grado', alum_Arma = '$this->alum_Arma', alum_Nacionalidad = '$this->alum_Nacionalidad' WHERE alum_ID = $this->alum_ID";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
-        $sql = "UPDATE alumnos SET detalle_situacion = '0' WHERE id_alumnos = $this->id_alumnos";
+        $sql = "UPDATE Alumnos SET detalle_situacion = '0' WHERE alum_ID = $this->alum_ID";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 }
+?>
