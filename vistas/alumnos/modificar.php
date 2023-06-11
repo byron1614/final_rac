@@ -19,20 +19,20 @@ require '../../modelos/Alumnos.php';
                 <input type="hidden" name="cliente_id">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nombre">NOMBRE DEL ALUMNO</label>
+                        <label for="alum_nombre">NOMBRE DEL ALUMNO</label>
                         <input type="text" name="cliente_nombre" id="cliente_nombre" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">APELLIDO DEL ALUMNO</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                        <label for="alum_apellido">APELLIDO DEL ALUMNO</label>
+                        <input type="text" name="alum_apellido" id="alum_apellido" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="cliente_nit">NACIONALIDAD</label>
-                        <input type="text" name="cliente_nit" id="cliente_nit" class="form-control" required>
+                        <label for="alum_nacionalidad">NACIONALIDAD</label>
+                        <input type="text" name="alum_nacionalidad" id="alum_nacionalidad" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
