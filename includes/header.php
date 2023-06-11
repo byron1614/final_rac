@@ -11,6 +11,6 @@
 
         }
     </style>
-    <title>Aplicacion de Tienda</title>
+    <title>Aplicacion para la escula de informatica</title>
 </head>
 <body>
