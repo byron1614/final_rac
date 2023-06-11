@@ -41,7 +41,7 @@ try {
                             <td><?= $key + 1 ?></td>
                             <td><?= $producto['MATE_NOMBRE'] ?></td>
                             <td><a class="btn btn-warning w-100" href="/final_rac/vistas/materias/modificar.php?mate_id=<?= $materia['MATE_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/materias/eliminar.php?mate_id=<?= $materia['MTE_ID']?>">Eliminar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/materias/eliminar.php?mate_id=<?= $materia['MATE_ID']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
