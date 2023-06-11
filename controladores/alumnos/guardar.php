@@ -1,9 +1,7 @@
 <?php
 require '../../modelos/Alumnos.php';
 
-
-if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma'] != '' && $_POST['alum_nacionalidad']!= ''){
-
+if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_grado'] != '' && $_POST['alum_arma'] != '' && $_POST['alum_nacionalidad'] != ''){
 
 
     try {
