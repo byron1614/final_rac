@@ -3,43 +3,26 @@ require '../../modelos/Alumnos.php';
 require '../../modelos/Rel_mate_alum.php';
 
 try {
+    $resultado = false;
 
     if (isset($_GET['alum_id'])) {
         $alumno = new Alumno(['alum_id' => $_GET['alum_id']]);
-
-        if($alumno->eliminar()){
-
-            $resultado = true;
-
-        }else{
-            $resultado = false;
-            throw new Exception("Error al eliminar el usuario ");
-        }
-
         $relacion = new Rel_mate_alum(['mate_alumno' => $_GET['alum_id']]);
 
-        if($relacion->eliminar()){
-
+        if ($alumno->eliminar() && $relacion->eliminar()) {
             $resultado = true;
-            
-        }else{
-            
-            $resultado = false;
-            throw new Exception("Error al eliminar");
-            
+        } else {
+            throw new Exception("Error al eliminar el usuario o la relación");
         }
-
     } else {
-        $resultado = false;
-        $error .= "no proporciono el ID del alumno";
+        throw new Exception("No se proporcionó el ID del alumno");
     }
-
-}catch (PDOException $ex){
-    $error .= $ex->getMessage();
-
-}catch (Exception $e2) {
-    $error .= $e2->getMessage();
+} catch (PDOException $ex) {
+    $error = $ex->getMessage();
+} catch (Exception $e) {
+    $error = $e->getMessage();
 }
+
 ?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
