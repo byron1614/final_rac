@@ -20,13 +20,13 @@ class Calificacion extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO calificaciones(res_alumno, res_materia, res_punteo, res_resultado) VALUES ($this->res_alumno, $this->res_materia, $this->res_punteo, '$this->res_resultado')";
+        $sql = "INSERT INTO resultados(res_alumno, res_materia, res_punteo, res_resultado) VALUES ($this->res_alumno, $this->res_materia, $this->res_punteo, '$this->res_resultado')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
-        $sql = "SELECT * FROM calificaciones WHERE detalle_situacion = '1'";
+        $sql = "SELECT * FROM resultados WHERE detalle_situacion = '1'";
 
         if($this->res_id != null){
             $sql .= " AND res_id = $this->res_id";
@@ -45,14 +45,14 @@ class Calificacion extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE calificaciones SET res_alumno = $this->res_alumno, res_materia = $this->res_materia, res_punteo = $this->res_punteo, res_resultado = '$this->res_resultado' WHERE res_id = $this->res_id";
+        $sql = "UPDATE resultados SET res_alumno = $this->res_alumno, res_materia = $this->res_materia, res_punteo = $this->res_punteo, res_resultado = '$this->res_resultado' WHERE res_id = $this->res_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
-        $sql = "UPDATE calificaciones SET detalle_situacion = '0' WHERE res_id = $this->res_id";
+        $sql = "UPDATE resultados SET detalle_situacion = '0' WHERE res_id = $this->res_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
