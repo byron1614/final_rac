@@ -23,7 +23,7 @@ try {
         <form action="/final_rac/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="res_alumno">Alumno</label>
+                    <label for="res_alumno">NOMBRE DEL ALUMNO</label>
                     <select name="res_alumno" id="res_alumno" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($alumnos as $key => $alumno) : ?>
@@ -33,10 +33,10 @@ try {
                 </div>
             </div>
             <hr>
-            <h2>Detalle de materias</h2>
+            <h2>DETALLE DE LAS MATERIAS</h2>
             <div class="row mb-3">
                 <div class="col-lg-8">
-                    <label for="materia1">Materia</label>
+                    <label for="materia1">MATERIA</label>
                     <select name="materia[]" id="materia1" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($materias as $key => $materia) : ?>

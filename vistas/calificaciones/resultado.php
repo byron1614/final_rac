@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 require '../../modelos/Calificaciones.php';
 require '../../modelos/Alumnos.php';
     try {
-        $id = $_GET['id_calificacies'];
+        $id = $_GET['res_id'];
         $calificacion = new Calificacion();
 
         $promedio = $calificacion->promedio($id);
@@ -38,12 +38,10 @@ require '../../modelos/Alumnos.php';
         <div class="row justify-content-center">
             <div class="col-lg-6 table-responsive">
             <table class="table table-bordered">
-    <thead>
-        <tr class="text-center table-dark">
-            <th colspan="3">DETALLE DE LA FACTURA.</th>
-        </tr>
-    </thead>
-    <tbody>
+            <thead>
+                <tr class="text-center table-dark">
+                    <th colspan="3">DETALLE DEL RESULTADO.</th>
+                </tr>
                <tr>
             <td><strong>NOMBRE:</strong></td>
             <?php foreach ($promedio as $key => $calificacion) : ?>
@@ -112,7 +110,7 @@ require '../../modelos/Alumnos.php';
                         <tr>
                         <td colspan="4">PROMEDIO:</td>
                         <td><?= $calificacion['PROMEDIO'] ?></td>
-                    </tr>
+                        </tr>
                     </tbody>
                 </table>
             </div>
