@@ -1,15 +1,24 @@
 <?php
+require_once '../../modelos/Alumnos.php';
 require_once '../../modelos/Calificaciones.php';
-try {
-    $calificacion = new Calificacion($_GET);
-    
-    $calificaciones = $calificacion->buscar();
 
-} catch (PDOException $e) {
-    $error = $e->getMessage();
-} catch (Exception $e2){
-    $error = $e2->getMessage();
+$id_alumno = isset($_GET['res_alumno']) && $_GET['res_alumno'] != '' ? $_GET['res_alumno'] : null;
+$error = '';
+
+if ($alum_id) {
+    try {
+        $alumnos = (new Alumno(["alum_id" => $alum_id]))->buscar2();
+        $resultados = (new resultado(["res_alumno" => $alum_id]))->buscar2();
+        $promedio = (new resultado(["res_alumno" => $alum_id]))->promedio();
+    } catch (PDOException $e) {
+        $error = $e->getMessage();
+    } catch (Exception $e2) {
+        $error = $e2->getMessage();
+    }
+} else {
+    $error = "No se proporcionó el ID del alumno";
 }
+
 
 ?>
 <!DOCTYPE html>
