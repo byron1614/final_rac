@@ -41,7 +41,8 @@ try {
     $error .= $e2->getMessage();
 }
 ?>
-
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

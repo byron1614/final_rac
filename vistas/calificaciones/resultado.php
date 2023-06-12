@@ -46,26 +46,26 @@ require '../../modelos/Alumnos.php';
     <tbody>
                <tr>
             <td><strong>NOMBRE DEL ALUMNO:</strong></td>
-            <?php foreach ($resultado as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALUM_NOMBRE'] . ' ' . $calificacion['ALUM_APELLIDO'] ?></td>
+            <?php foreach ($resultado as $key => $resultados) : ?>
+                <td><?= $resultado['ALUM_NOMBRE'] . ' ' . $resultado['ALUM_APELLIDO'] ?></td>
             <?php endforeach ?>
         </tr>
         <tr>
             <td><strong>GRADO MILITAR DEL ALUMNO:</strong></td>
-            <?php foreach ($resultado as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALUM_GRADO'] ?></td>
+            <?php foreach ($resultado as $key => $resultados) : ?>
+                <td><?= $resultados['ALUM_GRADO'] ?></td>
             <?php endforeach ?>
         </tr>
         <tr>
             <td><strong>ARMA DEL ALUMNO:</strong></td>
-            <?php foreach ($resultado as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALUM_ARMA'] ?></td>
+            <?php foreach ($resultado as $key => $resultados) : ?>
+                <td><?= $resultados['ALUM_ARMA'] ?></td>
             <?php endforeach ?>
         </tr>
         <tr>
             <td><strong>NACIONALIDAD:</strong></td>
-            <?php foreach ($resultado as $key => $calificacion) : ?>
-                <td><?= $calificacion['ALUM_NACIONALIDAD'] ?></td>
+            <?php foreach ($resultado as $key => $resultados) : ?>
+                <td><?= $resultados['ALUM_NACIONALIDAD'] ?></td>
             <?php endforeach ?>
         </tr>
         <?php if (count($resultado) == 0) : ?>
@@ -93,12 +93,12 @@ require '../../modelos/Alumnos.php';
                     </thead>
                     <tbody>
                         <?php if (count($resultado) > 0) : ?>
-                            <?php foreach ($resultado as $key => $calificacion) : ?>
+                            <?php foreach ($resultado as $key => $resultados) : ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $calificacion ['MATE_NOMBRE'] ?></td>
-                                    <td><?= $calificacion['RES_PUNTEO'] ?></td>
-                                    <td><?= $calificacion['RES_RESULTADO'] ?></td>                 
+                                    <td><?= $resultados ['MATE_NOMBRE'] ?></td>
+                                    <td><?= $resultados['RES_PUNTEO'] ?></td>
+                                    <td><?= $resultados['RES_RESULTADO'] ?></td>                 
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
@@ -108,7 +108,7 @@ require '../../modelos/Alumnos.php';
                         <?php endif ?>
                         <tr>
                         <td colspan="4">RESULTADO:</td>
-                        <td><?= $calificacion['RESULTADO'] ?></td>
+                        <td><?= $resultado['RESULTADO'] ?></td>
                     </tr>
                     </tbody>
                 </table>
