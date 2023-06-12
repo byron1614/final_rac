@@ -11,6 +11,6 @@
 
         }
     </style>
-    <title>Aplicacion para la escula de informatica</title>
+    <title>Aplicacion para la escuela de informatica</title>
 </head>
 <body>
