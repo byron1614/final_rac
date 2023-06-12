@@ -3,9 +3,7 @@ require '../../modelos/Materias.php';
 
 
 if($_POST['mate_nombre'] != ''){
-
-
-
+    
     try {
         $materia = new Materia($_POST);
         $resultado = $materia->modificar();
