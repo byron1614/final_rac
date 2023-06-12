@@ -1,10 +1,13 @@
 <?php
-require '../../modelos/Alumnos.php';
-try {
-    $alumno = new Alumno($_GET);
-    
-    $alumnos = $alumno->buscar();
 
+require '../../modelos/Alumnos.php';
+
+$a_nombre = isset($_GET['alum_nombre']) && $_GET['alum_nombre'] != '' ? $_GET['alum_nombre'] : null;
+$a_apellido = isset($_GET['alum_apellido']) && $_GET['alum_apellido'] != '' ? $_GET['alum_apellido'] : null;
+
+try {
+    $alumno = new Alumno(["alum_nombre" => $a_nombre, "alum_apellido" => $a_apellido]);
+    $alumnos = $alumno->buscar();
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2){
