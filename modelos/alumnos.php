@@ -42,7 +42,7 @@ class Alumno extends Conexion{
     }
 
 
-    public function buscar2(){
+    public function buscar_alum(){
         $sql = "SELECT * FROM alumnos WHERE ";
 
         if($this->alum_id != null){
