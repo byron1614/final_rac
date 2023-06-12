@@ -1,81 +1,54 @@
 <?php
-require '../../modelos/Alumnos.php';
-try {
+<<<<<<< HEAD
+require '../../modelos/Materia.php';
 
-    if(isset($_GET['alu_nombre']) && $_GET['alu_nombre'] != ''){
-        $a_nombre = $_GET['alu_nombre'];
-    }else{
-        $a_nombre = null;
+
+=======
+require '../../modelos/Materias.php';
+>>>>>>> 08719a1cf8763ba257e7cd605f6990d3ed0e5514
+if($_POST['ma_nombre'] != ''){
+    try {
+        $materia = new Materia($_POST);
+        $resultado = $materia->guardar();
+        $error = "NO se guardó correctamente";
+    } catch (PDOException $e) {
+        $error = $e->getMessage();
+    } catch (Exception $e2){
+        $error = $e2->getMessage();
     }
-
-    if(isset($_GET['alu_apellido']) && $_GET['alu_apellido'] != ''){
-        $a_apellido = $_GET['alu_apellido'];
-    }else{
-        $a_apellido = null;
-    }
-
-    $alumno = new Alumno(["alu_nombre" => $a_nombre, "alu_apellido" => $a_apellido]);
-    
-    $alumnos = $alumno->buscar();
-
-
-
-
-} catch (PDOException $e) {
-    $error = $e->getMessage();
-} catch (Exception $e2){
-    $error = $e2->getMessage();
+}else{
+    $error = "Debe llenar todos los datos";
 }
 
 ?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
 
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <table class="table table-bordered table-hover">
-                    <thead class="table-dark">
-                        <tr>
-                            <th>NO. </th>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
-                            <th>GRADO</th>
-                            <th>ARMA</th>
-                            <th>NACIONALIDAD</th>
-                            <th>MODIFICAR</th>
-                            <th>ELIMINAR</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php if(count($alumnos) > 0):?>
-                        <?php foreach($alumnos as $key => $alumno) : ?>
-
-                         
-                        <tr>
-                            <td><?= $key + 1 ?></td>
-                            <td><?= $alumno['ALU_NOMBRE'] ?></td>
-                            <td><?= $alumno['ALU_APELLIDO'] ?></td>
-                            <td><?= $alumno['ALU_GRADO'] ?></td>
-                            <td><?= $alumno['ALU_ARMA'] ?></td>
-                            <td><?= $alumno['ALU_NAC'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_cornelio/vistas/alumnos/modificar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_cornelio/controladores/alumnos/eliminar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Eliminar</a></td>
-                        </tr>
-                        <?php endforeach ?>
-                        <?php else :?>
-                            <tr>
-                                <td colspan="3">NO EXISTEN REGISTROS</td>
-                            </tr>
-                        <?php endif?>
-                    </tbody>
-                </table>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <?php if($resultado): ?>
+            <div class="alert alert-success" role="alert">
+                Guardado exitosamente!
             </div>
+<<<<<<< HEAD
         </div>
-        <div class="row justify-content-center">
+        <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/alumnos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
+=======
+            <?php else :?>
+            <div class="alert alert-danger" role="alert">
+                Ocurrió un error: <?= $error ?>
+>>>>>>> 08719a1cf8763ba257e7cd605f6990d3ed0e5514
             </div>
+            <?php endif ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <a href="/final_cornelio/vistas/materias/index.php" class="btn btn-info">Volver al formulario</a>
+        </div>
+    </div>
+</div>
 <?php include_once '../../includes/footer.php'?>

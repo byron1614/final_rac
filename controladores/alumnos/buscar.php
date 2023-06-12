@@ -1,9 +1,24 @@
 <?php
-require '../../modelos/Alumnos.php';
+require '../../modelos/Alumno.php';
 try {
 
-    $alumno = new Alumno($_GET);
+    if(isset($_GET['alu_nombre']) && $_GET['alu_nombre'] != ''){
+        $a_nombre = $_GET['alu_nombre'];
+    }else{
+        $a_nombre = null;
+    }
+
+    if(isset($_GET['alu_apellido']) && $_GET['alu_apellido'] != ''){
+        $a_apellido = $_GET['alu_apellido'];
+    }else{
+        $a_apellido = null;
+    }
+
+    $alumno = new Alumno();
+    
     $alumnos = $alumno->buscar();
+
+
 
 
 } catch (PDOException $e) {
@@ -39,13 +54,13 @@ try {
                          
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $alumno['ALUM_NOMBRE'] ?></td>
-                            <td><?= $alumno['ALUM_APELLIDO'] ?></td>
-                            <td><?= $alumno['ALUM_GRADO'] ?></td>
-                            <td><?= $alumno['ALUM_ARMA'] ?></td>
-                            <td><?= $alumno['ALUM_NACIONALIDAD'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?alum_id=<?= $alumno['ALUM_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?alum_id=<?= $alumno['ALUM_ID']?>">Eliminar</a></td>
+                            <td><?= $alumno['ALU_NOMBRE'] ?></td>
+                            <td><?= $alumno['ALU_APELLIDO'] ?></td>
+                            <td><?= $alumno['ALU_GRADO'] ?></td>
+                            <td><?= $alumno['ALU_ARMA'] ?></td>
+                            <td><?= $alumno['ALU_NAC'] ?></td>
+                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>

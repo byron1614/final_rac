@@ -1,43 +1,43 @@
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
-<div class="container">
-    <h1 class="text-center">FORMULARIO DE INGRESO DE ALUMNOS</h1>
-    <div class="row justify-content-center">
-        <form action="/final_rac/controladores/alumnos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="alum_nombre">NOMBRE DEL ALUMNO</label>
-                    <input type="text" name="alum_nombre" id="alum_nombre" class="form-control" required>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Formulario de ingreso del alumno</h1>
+        <div class="row justify-content-center">
+            <form action="/final_rac/controladores/alumnos/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+                <div class="row mb-3">
+                    <div class="col">
+                        <label for="alu_nombre">Nombre del alumno</label>
+                        <input type="text" name="alu_nombre" id="alu_nombre" class="form-control" placeholder="ejemplo: danny " required>
+                    </div>
+                    <div class="col">
+                        <label for="alu_apellido">Apellido del alumno</label>
+                        <input type="text" name="alu_apellido" id="alu_apellido" class="form-control" placeholder="ejemplo: cornelio" required>
+                    </div>
                 </div>
                 <div class="row mb-3">
-                <div class="col">
-                    <label for="alum_apellido">APELLIDO DEL ALUMNO</label>
-                    <input type="text" name="alum_apellido" id="alum_apellido" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="alum_grado">GRADO MILITAR DEL ALUMNO</label>
-                    <input type="text" name="alum_grado" id="alum_grado" class="form-control" required>
+                    <div class="col">
+                        <label for="alu_grado">Grado del alumno</label>
+                        <input type="text" name="alu_grado" id="alu_grado" class="form-control" placeholder="ejemplo: teniente" required>
+                    </div>
+                    <div class="col">
+                        <label for="alu_arma">Arma del alumno</label>
+                        <input type="text" name="alu_arma" id="alu_arma" class="form-control" placeholder="ejemplo: aviacion"required>
+                    </div>
                 </div>
                 <div class="row mb-3">
-                <div class="col">
-                    <label for="alum_arma">ARMA DEL ALUMNO</label>
-                    <input type="text" name="alum_arma" id="alum_arma" class="form-control" required>
+                    <div class="col">
+                        <label for="alu_nac">Nacionalidad del alumno</label>
+                        <input type="text" name="alu_nac" id="alu_nac" class="form-control" placeholder="ejemplo: dominicano" required>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="alum_nacionalidad">NACIONALIDAD DEL ALUMNO</label>
-                    <input type="text" name="alum_nacionalidad" id="alum_nacionalidad" class="form-control" required>
+                <div class="row mb-3">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                    </div>
                 </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <button type="submit" class="btn btn-primary w-100">GUARDAR</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-</div>
+    
 <?php include_once '../../includes/footer.php'?>

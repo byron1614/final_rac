@@ -4,47 +4,54 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand">ESCUELA DE INFORMATICA</a>
+<<<<<<< HEAD
+            <a class="navbar-brand" href="/final_rac/">Escuela de Informatica</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page">INICIO</a>
+                    <a class="nav-link active" aria-current="page" href="/final_rac/">Inicio</a>
+=======
+            <a class="navbar-brand">Escuela de Informatica</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page">Inicio</a>
+>>>>>>> 08719a1cf8763ba257e7cd605f6990d3ed0e5514
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    RESULTADOS
+                        Calificaciones
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/resultados/index.php">INGRESAR RESULTADOS</a>
+                            <a class="nav-link" href="/final_rac/vistas/calificaciones/index.php">Ingresar calificaciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/resultados/buscar.php">BUSCAR RESULTADOS</a>
+                            <a class="nav-link" href="/final_rac/vistas/calificaciones/buscar.php">Buscar calificaciones</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    MATERIA
+                    Materias
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/materias/index.php">CREAR MATERIA</a>
+                            <a class="nav-link" href="/final_rac/vistas/materias/index.php">Crear Materia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/materias/buscar.php">BUSCAR MATERIA</a>
+                            <a class="nav-link" href="/final_rac/vistas/materias/buscar.php">Buscar Materia</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        ALUMNOS
+                        Alumnos
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/alumnos/index.php">CREAR ALUMNOS</a>
+                            <a class="nav-link" href="/final_rac/vistas/alumnos/index.php">Crear Alumnos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/alumnos/buscar.php">BUSCAR ALUMNOS</a>
+                            <a class="nav-link" href="/final_rac/vistas/alumnos/buscar.php">Buscar Alumnos</a>
                         </li>
                     </ul>
                 </li>
