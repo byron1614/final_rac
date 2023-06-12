@@ -18,12 +18,12 @@ try {
 <?php include_once '../../includes/navbar.php'?>
 
 <div class="container mt-5">
-    <h1 class="text-center">FORMULARIO DE CALIFICACIONES</h1>
+    <h1 class="text-center">FORMULARIO DE RESULTADOS</h1>
     <div class="row justify-content-center">
-        <form action="/final_rac/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
+        <form action="/final_rac/controladores/resultados/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="res_alumno">Alumno</label>
+                    <label for="res_alumno">NOMBRE DEL ALUMNO</label>
                     <select name="res_alumno" id="res_alumno" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($alumnos as $key => $alumno) : ?>
@@ -45,8 +45,8 @@ try {
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label for="calificacion1">PUNTEO OBTENIDO</label>
-                    <input type="number" step="any" name="res_punteo" id="calificacion1" class="form-control">
+                    <label for="resultado1">PUNTEO OBTENIDO</label>
+                    <input type="number" step="any" name="res_punteo" id="resultado1" class="form-control">
                 </div>
             </div>
             <div class="row mb-3">
