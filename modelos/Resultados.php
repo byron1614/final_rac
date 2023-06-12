@@ -1,7 +1,7 @@
 <?php
 require_once 'Conexion.php';
 
-class Calificacion extends Conexion{
+class Resultados extends Conexion{
     public $res_id;
     public $res_alumno;
     public $res_materia;
@@ -44,6 +44,22 @@ class Calificacion extends Conexion{
         return $resultado;
     }
 
+
+    public function buscar_alum(){
+        $sql = "SELECT materias.ma_nombre as res_materia, 
+        resultados.res_punteo as res_punteo, 
+        resultados.res_resultado as res_resultado  
+        FROM resultados INNER JOIN materias ON 
+        materias.mate_id = resultados.res_materia 
+        WHERE resultados.detalle_situacion = '1'";
+
+        if($this->res_alumno != ''){
+            $sql .= " AND resultados.res_alumno = $this->res_alumno";
+        }
+
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
     public function modificar(){
         $sql = "UPDATE resultados SET res_alumno = $this->res_alumno, res_materia = $this->res_materia, res_punteo = $this->res_punteo, res_resultado = '$this->res_resultado' WHERE res_id = $this->res_id";
         
