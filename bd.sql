@@ -25,6 +25,7 @@ CREATE TABLE relacion_mate_alum (
   FOREIGN KEY (mate_materia) REFERENCES Materias(mate_ID)
 );
 
+
 -- Creación de la tabla Resultados
 CREATE TABLE Resultados (
   res_ID SERIAL PRIMARY KEY,
