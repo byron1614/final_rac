@@ -1,18 +1,47 @@
 <?php
 require '../../modelos/Alumnos.php';
+require '../../modelos/Rel_mate_alum.php';
 
+try {
 
-    try {
-        $alumno = new Alumno($_GET);
-        $resultado = $alumno->eliminar();
+    if (isset($_GET['alum_id'])) {
+        $alumno = new Alumno(['alum_id' => $_GET['alum_id']]);
 
-    } catch (PDOException $e) {
-        $error = $e->getMessage();
-    } catch (Exception $e2){
-        $error = $e2->getMessage();
+        if($alumno->eliminar()){
+
+            $resultado = true;
+
+        }else{
+            $resultado = false;
+            throw new Exception("Error al eliminar el usuario ");
+        }
+
+        $relacion = new Rel_mate_alum(['mate_alumno' => $_GET['alum_id']]);
+
+        if($relacion->eliminar()){
+
+            $resultado = true;
+            
+        }else{
+            
+            $resultado = false;
+            throw new Exception("Error al eliminar");
+            
+        }
+
+    } else {
+        $resultado = false;
+        $error .= "no proporciono el ID del alumno";
     }
 
+}catch (PDOException $ex){
+    $error .= $ex->getMessage();
+
+}catch (Exception $e2) {
+    $error .= $e2->getMessage();
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,7 +49,7 @@ require '../../modelos/Alumnos.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultados</title>
+    <title>Resultado de alumnos</title>
 </head>
 <body>
     <div class="container">
@@ -28,7 +57,7 @@ require '../../modelos/Alumnos.php';
             <div class="col-lg-6">
                 <?php if($resultado): ?>
                     <div class="alert alert-success" role="alert">
-                        Eliminado exitosamente!
+                        Alumno eliminado exitosamente!
                     </div>
                 <?php else :?>
                     <div class="alert alert-danger" role="alert">
