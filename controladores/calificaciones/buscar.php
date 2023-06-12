@@ -1,23 +1,9 @@
 <?php
-require '../../modelos/Alumnos.php';
+require_once '../../modelos/Calificaciones.php';
 try {
-
-    if(isset($_GET['alum_nombre']) && $_GET['alum_nombre'] != ''){
-        $a_nombre = $_GET['alum_nombre'];
-    }else{
-        $a_nombre = null;
-    }
-
-    if(isset($_GET['alum_apellido']) && $_GET['alum_apellido'] != ''){
-        $a_apellido = $_GET['alum_apellido'];
-    }else{
-        $a_apellido = null;
-    }
-
-    $alumno = new Alumno(["alum_nombre" => $a_nombre, "alum_apellido" => $a_apellido]);
+    $calificacion = new Calificacion($_GET);
     
-    $alumnos = $alumno->buscar();
-
+    $calificaciones = $calificacion->buscar();
 
 } catch (PDOException $e) {
     $error = $e->getMessage();
@@ -33,7 +19,7 @@ try {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>resultado de los alumnos</title>
+    <title>Resultado de calificaciones de los alumnos</title>
 </head>
 <body>
     <div class="container">
@@ -43,34 +29,24 @@ try {
                     <thead class="table-dark">
                         <tr>
                             <th>NO. </th>
-                            <th>NOMBRE</th>
-                            <th>APELLIDO</th>
+                            <th>ALUMNO</th>
                             <th>GRADO</th>
                             <th>ARMA</th>
                             <th>NACIONALIDAD</th>
-                            <th>MODIFICAR</th>
-                            <th>ELIMINAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($alumnos) > 0):?>
-                        <?php foreach($alumnos as $key => $alumno) : ?>
-
-                         
+                        <?php if(count($calificaciones) > 0):?>
+                        <?php foreach($calificaciones as $key => $calificacion) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $alumno['ALUM_NOMBRE'] ?></td>
-                            <td><?= $alumno['ALUM_APELLIDO'] ?></td>
-                            <td><?= $alumno['ALUM_GRADO'] ?></td>
-                            <td><?= $alumno['ALUM_ARMA'] ?></td>
-                            <td><?= $alumno['ALUM_NACIONALIDAD'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?alum_id=<?= $alumno['ALUM_ID']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?alum_id=<?= $alumno['ALUM_ID']?>">Eliminar</a></td>
+                            <td><?= $calificacion['ALUM_NOMBRE'] . ' ' . $calificacion['ALUM_NOMBRE']?></td>
+                            <td><a class="btn btn-info w-100" href="/final_rac/vistas/calificaciones/resultado.php?res_id=<?= $calificacion['RES_ID']?>">VER DETALLE</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
                             <tr>
-                                <td colspan="3">NO EXISTEN REGISTROS</td>
+                                <td colspan="4">NO EXISTEN REGISTROS</td>
                             </tr>
                         <?php endif?>
                     </tbody>
@@ -79,7 +55,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_rac/vistas/alumnos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/calificaciones/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>
