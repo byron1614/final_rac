@@ -17,7 +17,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="alum_grado">GRADO MILITAR</label>
+                    <label for="alum_grado">GRADO MILITAR DEL ALUMNO</label>
                     <input type="text" name="alum_grado" id="alum_grado" class="form-control" required>
                 </div>
                 <div class="row mb-3">
@@ -34,7 +34,7 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <button type="submit" class="btn btn-primary w-100">Guardar</button>
+                    <button type="submit" class="btn btn-primary w-100">GUARDAR</button>
                 </div>
             </div>
         </form>
