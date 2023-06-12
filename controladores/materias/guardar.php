@@ -4,12 +4,10 @@ require '../../modelos/Materias.php';
 
 if($_POST['mate_nombre'] != ''){
 
-
-
     try {
         $materia = new Materia($_POST);
         $resultado = $materia->guardar();
-        $error = "NO se guardó correctamente";
+        $error = "No se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
@@ -27,7 +25,7 @@ if($_POST['mate_nombre'] != ''){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultados</title>
+    <title>Resultados de alumnos</title>
 </head>
 <body>
     <div class="container">
