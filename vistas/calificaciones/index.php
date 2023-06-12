@@ -17,13 +17,13 @@ try {
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
 
-<div class="container">
-    <h1 class="text-center">FORMULARIO DE INGRESO DE CALIFICACIONES</h1>
+<div class="container mt-5">
+    <h1 class="text-center">FORMULARIO DE CALIFICACIONES</h1>
     <div class="row justify-content-center">
         <form action="/final_rac/controladores/calificaciones/guardar.php" method="POST" class="col-lg-8 border bg-light p-3">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="res_alumno">NOMBRE DEL ALUMNO</label>
+                    <label for="res_alumno">Alumno</label>
                     <select name="res_alumno" id="res_alumno" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($alumnos as $key => $alumno) : ?>
@@ -36,85 +36,30 @@ try {
             <h2>DETALLE DE LAS MATERIAS</h2>
             <div class="row mb-3">
                 <div class="col-lg-8">
-                    <label for="materia1">MATERIA</label>
-                    <select name="materia[]" id="materia1" class="form-control">
+                    <label for="materia1">MATERIA ASIGNADA</label>
+                    <select name="res_materia" id="materia1" class="form-control">
                         <option value="">SELECCIONE...</option>
                         <?php foreach ($materias as $key => $materia) : ?>
-                            <option value="<?= $materia['ID_MATERIAS'] ?>"><?= $materia['MATE_NOMBRE'] ?></option>
+                            <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MATE_NOMBRE'] ?></option>
                         <?php endforeach ?>
                     </select>
                 </div>
                 <div class="col-lg-4">
-                    <label for="calificacion1">PUNTEO DEL ALUMNO</label>
-                    <input type="number" step="any" name="res_punteo[]" id="calificacion1" class="form-control">
+                    <label for="calificacion1">PUNTEO OBTENIDO</label>
+                    <input type="number" step="any" name="res_punteo" id="calificacion1" class="form-control">
                 </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <button type="submit" class="btn btn-primary w-100">GUARDAR</button>
                 </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="materia2">MATERIA 1</label>
-                        <select name="materia[]" id="materia2" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="calificacion2">RESULTADO</label>
-                        <input type="number" step="any" name="calif_punteo[]" id="calificacion2" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="materia3">Tercera materia</label>
-                        <select name="materia[]" id="materia3" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE']?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="calificacion3">Calificacion</label>
-                        <input type="number" step="any" name="calif_punteo[]" id="calificacion3" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="materia4">Cuarta materia</label>
-                        <select name="materia[]" id="materia4" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="calificacion4">Calificacion</label>
-                        <input type="number" step="any" name="calif_punteo[]" id="calificacion4" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col-lg-8">
-                        <label for="materia5">Quinta materia</label>
-                        <select name="materia[]" id="materia5" class="form-control">
-                            <option value="">SELECCIONE...</option>
-                            <?php foreach ($materias as $key => $materia) : ?>
-                                <option value="<?= $materia['MATE_ID'] ?>"><?= $materia['MA_NOMBRE'] ?></option>
-                            <?php endforeach?>
-                        </select>
-                    </div>
-                    <div class="col-lg-4">
-                        <label for="calificacion5">Calificacion</label>
-                        <input type="number" step="any" name="calif_punteo[]" id="calificacion5" class="form-control">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <button type="submit" class="btn btn-primary w-100">Guardar</button>
-                    </div>
-                </div>
-            </form>
+            </div>
+        </form>
+         
+    </div>
+</div>
+                
+                
         </div>
     </div>
 <?php include_once '../../includes/footer.php'?>
