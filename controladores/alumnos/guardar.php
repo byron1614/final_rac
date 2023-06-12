@@ -47,7 +47,7 @@ if($_POST['alum_nombre'] != '' && $_POST['alum_apellido'] != '' && $_POST['alum_
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
