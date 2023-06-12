@@ -47,7 +47,7 @@ if($_POST['res_alumno'] != ''){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_rac/vistas/calificaciones/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/resultados/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
