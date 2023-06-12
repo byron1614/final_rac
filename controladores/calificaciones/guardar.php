@@ -1,5 +1,5 @@
 <?php
-require_once '../../modelos/Calificaciones.php';
+require_once '../../modelos/Resultados.php';
 require_once '../../modelos/Rel_mate_alum.php';
 
 if($_POST['res_alumno'] != ''){
