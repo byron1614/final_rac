@@ -11,14 +11,14 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    CALIFICACIONES
+                    RESULTADOS
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/calificaciones/index.php">INGRESAR CALIFICACIONES</a>
+                            <a class="nav-link" href="/final_rac/vistas/resultados/index.php">INGRESAR RESULTADOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/calificaciones/buscar.php">BUSCAR CALIFICACIONES</a>
+                            <a class="nav-link" href="/final_rac/vistas/resultados/buscar.php">BUSCAR RESULTADOS</a>
                         </li>
                     </ul>
                 </li>
