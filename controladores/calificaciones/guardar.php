@@ -1,34 +1,21 @@
 <?php
-require_once '../../modelos/Resultados.php';
+require_once '../../modelos/Calificaciones.php';
 require_once '../../modelos/Rel_mate_alum.php';
 
-$materias = array_filter($_POST['materias']);
-$calif_punteo = array_filter($_POST['calif_punteo']);
-if($_POST['calificacion_cliente'] != '' && $_POST['calificacion_fecha'] != '' && count($materias)>0 && count($calif_punteo)>0){
+if($_POST['res_alumno'] != ''){
 
+    
     try {
         $calificacion = new Calificacion($_POST);
         $resultado = $calificacion->guardar();
-        $idInsertado = $resultado['id'];
-        $i = 0;
-        foreach ($materias as $key => $producto) {
-            $relacionmatalum = new RelacionMatAlum([
-                'detalle_calificacion' => $idInsertado,
-                'detalle_materia' => $producto,
-                'detalle_punteo' => $calif_punteo[$i]
-            ]);
-            $relacionmatalum->guardar();
-            $i++;
-
-        }
-   
+        $error = "NO se guardó correctamente";
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
         $error = $e2->getMessage();
     }
 }else{
-    $error = "Debe llenar todos los datos y seleccionar al menos un producto";
+    $error = "Debe llenar todos los datos";
 }
 
 
@@ -60,7 +47,7 @@ if($_POST['calificacion_cliente'] != '' && $_POST['calificacion_fecha'] != '' &&
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/calificaciones/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
