@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Alumno.php';
+require '../../modelos/Alumnos.php';
 
 
     try {
