@@ -7,8 +7,8 @@ $error = '';
 
 if ($alum_id) {
     try {
-        $alumnos = (new Alumno(["alum_id" => $alum_id]))->buscar2();
-        $resultados = (new resultado(["res_alumno" => $alum_id]))->buscar2();
+        $alumnos = (new Alumno(["alum_id" => $alum_id]))->buscar_alum();
+        $resultados = (new resultado(["res_alumno" => $alum_id]))->buscar_alum();
         $promedio = (new resultado(["res_alumno" => $alum_id]))->promedio();
     } catch (PDOException $e) {
         $error = $e->getMessage();
