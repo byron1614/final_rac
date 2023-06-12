@@ -15,7 +15,7 @@ require '../../modelos/Materias.php';
         <h1 class="text-center">MODIFICAR MATERIAS</h1>
         <div class="row justify-content-center">
             <form action="/final_rac/controladores/materias/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="mate_id" value="<?= $materias[0]['mate_id'] ?>" >
+                <input type="hidden" name="mate_id" value="<?= $materias[0]['MATE_ID'] ?>" >
                 <div class="row mb-3">
                     <div class="col">
                         <label for="mate_nombre">NOMBRE DE LA MATERIA</label>
