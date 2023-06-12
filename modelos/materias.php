@@ -22,8 +22,8 @@ require_once 'Conexion.php';
         public function buscar(){
             $sql = "SELECT * FROM materias WHERE detalle_situacion = 1";
     
-            if($this->mate_nombre != null){
-                $sql .= " AND mate_nombre = '$this->mate_nombre'";
+            if($this->mate_id != null){
+                $sql .= " AND mate_id = '$this->mate_id'";
             }
     
             $resultado = self::servir($sql);

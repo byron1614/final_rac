@@ -14,14 +14,15 @@ require_once '../../modelos/Materias.php';
 ?>
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
-    <div class="container">
-        <h1 class="text-center">FORMULARIO DE BUSQUEDA DE RESULTADOS</h1>
+
+    <div class="container mt-5">
+        <h1 class="text-center">FORMULARIO DE BUSQUEDA CALIFICACIONES</h1>
         <div class="row justify-content-center">
             <form action="/final_rac/controladores/resultados/buscar.php" method="GET" class="col-lg-8 border bg-light p-3">
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="res_alumno">NOMBRE DEL ALUMNO</label>
-                        <select name="res_alumno" id="res_alumno" class="form-control">
+                        <label for="res_alum">AlUMNO</label>
+                        <select name="res_alum" id="res_alum" class="form-control">
                             <option value="">SELECCIONE...</option>
                             <?php foreach ($alumnos as $key => $alumno) : ?>
                                 <option value="<?= $alumno['ALUM_ID'] ?>"><?= $alumno['ALUM_NOMBRE'] . ' ' . $alumno['ALUM_APELLIDO'] ?></option>
@@ -37,4 +38,5 @@ require_once '../../modelos/Materias.php';
             </form>
         </div>
     </div>
+
 <?php include_once '../../includes/footer.php'?>

@@ -20,7 +20,7 @@ class Resultados extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO resultados(res_alumno, res_materia, res_punteo, res_resultado) VALUES ($this->res_alumno, $this->res_materia, $this->res_punteo, '$this->res_resultado')";
+        $sql = "INSERT INTO resultados(res_alumno, res_materia, res_punteo, res_resultado, detalle_situacion) VALUES ('$this->res_alumno', '$this->res_materia', '$this->res_punteo', '$this->res_resultado', '$this->detalle_situacion')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
@@ -32,40 +32,36 @@ class Resultados extends Conexion{
             $sql .= " AND res_id = $this->res_id";
         }
 
-        if($this->res_id != ''){
-            $sql .= " AND res_id = $this->res_id";
-        }
-
         if($this->res_materia != ''){
-            $sql .= " AND res_materia = $this->res_materia";
+            $sql .= " AND res_materia = '$this->res_materia'";
         }
 
         $resultado = self::servir($sql);
         return $resultado;
     }
 
-
-    public function buscar_alum(){
+    public function buscar(){
         $sql = "SELECT materias.ma_nombre as res_materia, resultados.res_punteo as res_punteo, resultados.res_resultado as res_resultado  
         FROM resultados INNER JOIN materias ON materias.mate_id = resultados.res_materia WHERE resultados.detalle_situacion = '1'";
 
         if($this->res_alumno != ''){
-            $sql .= " AND resultados.res_alumno = $this->res_alumno";
+            $sql .= " AND resultados.res_alumno = '$this->res_alumno'";
         }
 
         $resultado = self::servir($sql);
         return $resultado;
     }
+
     public function modificar(){
-        $sql = "UPDATE resultados SET res_alumno = $this->res_alumno, res_materia = $this->res_materia, res_punteo = $this->res_punteo, res_resultado = '$this->res_resultado' WHERE res_id = $this->res_id";
-        
+        $sql = "UPDATE resultados SET res_alumno = '$this->res_alumno', res_materia = '$this->res_materia', res_punteo = '$this->res_punteo', res_resultado = '$this->res_resultado' WHERE res_id = $this->res_id";
+
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
         $sql = "UPDATE resultados SET detalle_situacion = '0' WHERE res_id = $this->res_id";
-        
+
         $resultado = self::ejecutar($sql);
         return $resultado;
     }

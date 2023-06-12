@@ -1,18 +1,18 @@
 -- Creación de la tabla Alumnos
 CREATE TABLE Alumnos(
-  alum_ID SERIAL PRIMARY KEY,
-  alum_Nombre VARCHAR(60) NOT NULL,
+  alum_id SERIAL PRIMARY KEY,
+  alum_nombre VARCHAR(60) NOT NULL,
   alum_apellido  VARCHAR(60) NOT NULL,
-  alum_Grado VARCHAR(60) NOT NULL,
-  alum_Arma VARCHAR(60) NOT NULL,
-  alum_Nacionalidad VARCHAR(60) NOT NULL,
+  alum_grado VARCHAR(60) NOT NULL,
+  alum_arma VARCHAR(60) NOT NULL,
+  alum_nacionalidad VARCHAR(60) NOT NULL,
   detalle_situacion CHAR (1) DEFAULT '1'
 );
 
 -- Creación de la tabla Materias
 CREATE TABLE Materias (
-  mate_ID SERIAL PRIMARY KEY,
-  mate_Nombre VARCHAR(70) NOT NULL,
+  mate_id SERIAL PRIMARY KEY,
+  mate_nombre VARCHAR(70) NOT NULL,
   detalle_situacion CHAR (1) DEFAULT '1'
 );
 
@@ -28,11 +28,11 @@ CREATE TABLE relacion_mate_alum (
 
 -- Creación de la tabla Resultados
 CREATE TABLE Resultados (
-  res_ID SERIAL PRIMARY KEY,
-  res_Alumno INT NOT NULL,
-  res_Materia INT NOT NULL,
-  res_Punteo FLOAT NOT NULL,
-  res_Resultado VARCHAR(10),
+  res_id SERIAL PRIMARY KEY,
+  res_alumno INT NOT NULL,
+  res_materia INT NOT NULL,
+  res_punteo FLOAT NOT NULL,
+  res_resultado VARCHAR(10),
   detalle_situacion CHAR (1) DEFAULT '1',
   FOREIGN KEY (res_Alumno) REFERENCES Alumnos(alum_ID),
   FOREIGN KEY (res_Materia) REFERENCES Materias(mate_ID)

@@ -1,13 +1,11 @@
 <?php
-
 require '../../modelos/Alumnos.php';
-
-$a_nombre = isset($_GET['alum_nombre']) && $_GET['alum_nombre'] != '' ? $_GET['alum_nombre'] : null;
-$a_apellido = isset($_GET['alum_apellido']) && $_GET['alum_apellido'] != '' ? $_GET['alum_apellido'] : null;
-
 try {
-    $alumno = new Alumno(["alum_nombre" => $a_nombre, "alum_apellido" => $a_apellido]);
+
+    $alumno = new Alumno($_GET);
     $alumnos = $alumno->buscar();
+
+
 } catch (PDOException $e) {
     $error = $e->getMessage();
 } catch (Exception $e2){
@@ -15,17 +13,10 @@ try {
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultados</title>
-</head>
-<body>
-    <div class="container">
+<?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
+    <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <table class="table table-bordered table-hover">
@@ -44,6 +35,8 @@ try {
                     <tbody>
                         <?php if(count($alumnos) > 0):?>
                         <?php foreach($alumnos as $key => $alumno) : ?>
+
+                         
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $alumno['ALUM_NOMBRE'] ?></td>
@@ -70,5 +63,4 @@ try {
             </div>
         </div>
     </div>
-</body>
-</html>
+<?php include_once '../../includes/footer.php'?>

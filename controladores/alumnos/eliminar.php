@@ -3,40 +3,50 @@ require '../../modelos/Alumnos.php';
 require '../../modelos/Rel_mate_alum.php';
 
 try {
-    $resultado = false;
 
     if (isset($_GET['alum_id'])) {
+
         $alumno = new Alumno(['alum_id' => $_GET['alum_id']]);
+
+        if($alumno->eliminar()){
+
+            $resultado = true;
+
+        }else{
+            $resultado = false;
+            throw new Exception("Error al eliminar el alumno");
+        }
+
         $relacion = new Rel_mate_alum(['mate_alumno' => $_GET['alum_id']]);
 
-        if ($alumno->eliminar() && $relacion->eliminar()) {
-            $resultado = true;
-        } else {
-            throw new Exception("Error al eliminar el usuario o la relación");
-        }
-    } else {
-        throw new Exception("No se proporcionó el ID del alumno");
-    }
-} catch (PDOException $ex) {
-    $error = $ex->getMessage();
-} catch (Exception $e) {
-    $error = $e->getMessage();
-}
+        if($relacion->eliminar()){
 
+            $resultado = true;
+            
+        }else{
+            
+            $resultado = false;
+            throw new Exception("Error al eliminar");
+            
+        }
+
+    } else {
+        $resultado = false;
+        $error .= "ID de alumno no proporcionado";
+    }
+
+}catch (PDOException $ex){
+    $error .= $ex->getMessage();
+
+}catch (Exception $e2) {
+    $error .= $e2->getMessage();
+}
 ?>
+
 <?php include_once '../../includes/header.php'?>
 <?php include_once '../../includes/navbar.php'?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <title>Resultado de alumnos</title>
-</head>
-<body>
-    <div class="container">
+
+    <div class="container mt-5">
         <div class="row">
             <div class="col-lg-6">
                 <?php if($resultado): ?>
@@ -57,5 +67,4 @@ try {
             </div>
         </div>
     </div>
-</body>
-</html>
+    <?php include_once '../../includes/footer.php'?>

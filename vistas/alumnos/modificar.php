@@ -1,9 +1,10 @@
 <?php
+
 require '../../modelos/Alumnos.php';
     try {
         $alumno = new Alumno($_GET);
 
-        $alumnos = $alumno->buscar();
+        $alumnos = $alumno->buscar_alum();
        
     } catch (PDOException $e) {
         $error = $e->getMessage();
@@ -12,15 +13,17 @@ require '../../modelos/Alumnos.php';
     }
 ?>
 <?php include_once '../../includes/header.php'?>
+<?php include_once '../../includes/navbar.php'?>
+
     <div class="container">
         <h1 class="text-center">MODIFICAR ALUMNOS</h1>
         <div class="row justify-content-center">
             <form action="/final_rac/controladores/alumnos/modificar.php" method="POST" class="col-lg-8 border bg-light p-3">
-                <input type="hidden" name="alum_id" value="<?= $alumnos[0]['ALUM_ID'] ?>" >
+                <input type="hidden" name="alum_ID"value="<?= $alumnos[0]['ALUM_ID'] ?>" >
                 <div class="row mb-3">
                 <div class="col">
-                        <label for="alum_nombre">NOMBRE DEL ALUMNO</label>
-                        <input type="text" name="alum_nombre" id="alum_nombre" class="form-control" required>
+                        <label for="alum_Nombre">NOMBRE DEL ALUMNO</label>
+                        <input type="text" name="alum_Nombre" id="alum_Nombre" class="form-control" required>
                     </div>
                     <div class="row mb-3">
                     <div class="col">
@@ -30,24 +33,24 @@ require '../../modelos/Alumnos.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="alum_grado">GRADO MILITAR</label>
-                        <input type="text" name="alum_grado" id="alum_grado" class="form-control" required>
+                        <label for="alum_Grado">GRADO MILITAR</label>
+                        <input type="text" name="alum_Grado" id="alum_Grado" class="form-control" required>
                     </div>
                     <div class="row mb-3">
                     <div class="col">
-                        <label for="alum_arma">ARMA DEL ALUMNO</label>
-                        <input type="text" name="alum_arma" id="alum_arma" class="form-control" required>
+                        <label for="alum_Arma">ARMA DEL ALUMNO</label>
+                        <input type="text" name="alum_Arma" id="alum_Arma" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="alum_nac">NACIONALIDAD DEL ALUMNO</label>
-                        <input type="text" name="alum_nac" id="alum_nac" class="form-control" required>
+                        <label for="alum_Nacionalidad">NACIONALIDAD DEL ALUMNO</label>
+                        <input type="text" name="alum_Nacionalidad" id="alum_Nacionalidad" class="form-control" required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <button type="submit" class="btn btn-warning w-100">Modificar</button>
+                        <button type="submit" class="btn btn-warning w-100">MODIFICAR</button>
                     </div>
                 </div>
             </form>
