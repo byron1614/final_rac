@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Alumnos.php';
+require '../../modelos/Alumno.php';
 try {
 
     if(isset($_GET['alu_nombre']) && $_GET['alu_nombre'] != ''){
@@ -14,7 +14,7 @@ try {
         $a_apellido = null;
     }
 
-    $alumno = new Alumno(["alu_nombre" => $a_nombre, "alu_apellido" => $a_apellido]);
+    $alumno = new Alumno();
     
     $alumnos = $alumno->buscar();
 
@@ -59,8 +59,8 @@ try {
                             <td><?= $alumno['ALU_GRADO'] ?></td>
                             <td><?= $alumno['ALU_ARMA'] ?></td>
                             <td><?= $alumno['ALU_NAC'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_cornelio/vistas/alumnos/modificar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_cornelio/controladores/alumnos/eliminar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Eliminar</a></td>
+                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/alumnos/modificar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/alumnos/eliminar.php?id_alumnos=<?= $alumno['ID_ALUMNOS']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -74,7 +74,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/alumnos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

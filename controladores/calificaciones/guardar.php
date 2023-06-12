@@ -1,6 +1,6 @@
 <?php
-require_once '../../modelos/Calificaciones.php';
-require_once '../../modelos/RelacionMatAlum.php';
+require_once '../../modelos/Calificacion.php';
+require_once '../../modelos/Relacion.php';
 
 function nota_literal($nota){
     if($nota >= 70){
@@ -63,7 +63,7 @@ if(isset($_POST)){
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/calificaciones/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/calificaciones/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

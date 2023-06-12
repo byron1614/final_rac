@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Materias.php';
+require '../../modelos/Materia.php';
 try {
     $materia = new Materia($_GET);
     
@@ -32,8 +32,8 @@ try {
                         <tr>
                             <td><?= $key + 1 ?></td>
                             <td><?= $materia['MA_NOMBRE'] ?></td>
-                            <td><a class="btn btn-warning w-100" href="/final_cornelio/vistas/materias/modificar.php?id_materias=<?= $materia['ID_MATERIAS']?>">Modificar</a></td>
-                            <td><a class="btn btn-danger w-100" href="/final_cornelio/controladores/materias/eliminar.php?id_materias=<?= $materia['ID_MATERIAS']?>">Eliminar</a></td>
+                            <td><a class="btn btn-warning w-100" href="/final_rac/vistas/materias/modificar.php?id_materias=<?= $materia['ID_MATERIAS']?>">Modificar</a></td>
+                            <td><a class="btn btn-danger w-100" href="/final_rac/controladores/materias/eliminar.php?id_materias=<?= $materia['ID_MATERIAS']?>">Eliminar</a></td>
                         </tr>
                         <?php endforeach ?>
                         <?php else :?>
@@ -47,7 +47,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/materias/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
+                <a href="/final_rac/vistas/materias/buscar.php" class="btn btn-info w-100">Volver al formulario</a>
             </div>
         </div>
     </div>

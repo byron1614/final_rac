@@ -1,5 +1,5 @@
 <?php
-require '../../modelos/Alumnos.php';
+require '../../modelos/Alumno.php';
 
 
 if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_grado'] != '' && $_POST['alu_arma'] != '' && $_POST['alu_nac'] != ''){
@@ -40,7 +40,7 @@ if($_POST['alu_nombre'] != '' && $_POST['alu_apellido'] != '' && $_POST['alu_gra
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_cornelio/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/vistas/alumnos/index.php" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>

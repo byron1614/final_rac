@@ -32,11 +32,11 @@ class Alumno extends Conexion{
         $sql = "SELECT * FROM alumnos where detalle_situacion != 0 ";
 
         if($this->alu_nombre != null && $this->alu_nombre != ''){
-            $sql .= "AND alu_nombre = '$this->alu_nombre'";
+            $sql .= "AND alu_nombre LIKE '%$this->alu_nombre%'";
         }
 
         if($this->alu_apellido != null && $this->alu_apellido != ''){
-            $sql .= " AND alu_apellido = '$this->alu_apellido'";
+            $sql .= " AND alu_apellido LIKE '%$this->alu_apellido%'";
         }
 
         $resultado = self::servir($sql);
