@@ -18,7 +18,7 @@ class Rel_mate_alum extends Conexion{
     }
 
     public function buscar(){
-        $sql = "SELECT * FROM rel_mat_alum WHERE 1=1";
+        $sql = "SELECT * FROM rel_mate_alum WHERE 1=1";
     
         if($this->id_mate_alum != null){
             $sql .= " AND id_mate_alum = $this->id_mate_alum";
