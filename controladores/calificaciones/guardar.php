@@ -6,9 +6,6 @@ $materias = array_filter($_POST['materias']);
 $calif_punteo = array_filter($_POST['calif_punteo']);
 if($_POST['calificacion_cliente'] != '' && $_POST['calificacion_fecha'] != '' && count($materias)>0 && count($calif_punteo)>0){
 
-    
-
-
     try {
         $calificacion = new Calificacion($_POST);
         $resultado = $calificacion->guardar();
@@ -24,8 +21,7 @@ if($_POST['calificacion_cliente'] != '' && $_POST['calificacion_fecha'] != '' &&
             $i++;
 
         }
-
-        
+   
     } catch (PDOException $e) {
         $error = $e->getMessage();
     } catch (Exception $e2){
