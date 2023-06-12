@@ -46,12 +46,8 @@ class Resultados extends Conexion{
 
 
     public function buscar_alum(){
-        $sql = "SELECT materias.ma_nombre as res_materia, 
-        resultados.res_punteo as res_punteo, 
-        resultados.res_resultado as res_resultado  
-        FROM resultados INNER JOIN materias ON 
-        materias.mate_id = resultados.res_materia 
-        WHERE resultados.detalle_situacion = '1'";
+        $sql = "SELECT materias.ma_nombre as res_materia, resultados.res_punteo as res_punteo, resultados.res_resultado as res_resultado  
+        FROM resultados INNER JOIN materias ON materias.mate_id = resultados.res_materia WHERE resultados.detalle_situacion = '1'";
 
         if($this->res_alumno != ''){
             $sql .= " AND resultados.res_alumno = $this->res_alumno";
