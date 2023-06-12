@@ -2,42 +2,42 @@
 require_once 'Conexion.php';
 
 class Calificacion extends Conexion{
-    public $id_calificaciones;
-    public $calif_alumno;
-    public $calif_materia;
-    public $calif_punteo;
-    public $calif_resultado;
+    public $res_id;
+    public $res_alumno;
+    public $res_materia;
+    public $res_punteo;
+    public $res_resultado;
     public $detalle_situacion;
 
     public function __construct($args = [] )
     {
-        $this->id_calificaciones = $args['id_calificaciones'] ?? null;
-        $this->calif_alumno = $args['calif_alumno'] ?? '';
-        $this->calif_materia = $args['calif_materia'] ?? '';
-        $this->calif_punteo = $args['calif_punteo'] ?? '';
-        $this->calif_resultado = $args['calif_resultado'] ?? '';
+        $this->res_id = $args['res_id'] ?? null;
+        $this->res_alumno = $args['res_alumno'] ?? '';
+        $this->res_materia = $args['res_materia'] ?? '';
+        $this->res_punteo = $args['res_punteo'] ?? '';
+        $this->res_resultado = $args['res_resultado'] ?? '';
         $this->detalle_situacion = $args['detalle_situacion'] ?? '1';
     }
 
     public function guardar(){
-        $sql = "INSERT INTO resultados(res_Alumno, res_Materia, res_Punteo, res_Resultado) VALUES ($this->calif_alumno, $this->calif_materia, $this->calif_punteo, '$this->calif_resultado')";
+        $sql = "INSERT INTO calificaciones(res_alumno, res_materia, res_punteo, res_resultado) VALUES ($this->res_alumno, $this->res_materia, $this->res_punteo, '$this->res_resultado')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
-        $sql = "SELECT * FROM resultados WHERE detalle_situacion = '1'";
+        $sql = "SELECT * FROM calificaciones WHERE detalle_situacion = '1'";
 
-        if($this->id_calificaciones != null){
-            $sql .= " AND res_ID = $this->id_calificaciones";
+        if($this->res_id != null){
+            $sql .= " AND res_id = $this->res_id";
         }
 
-        if($this->calif_alumno != ''){
-            $sql .= " AND res_Alumno = $this->calif_alumno";
+        if($this->res_id != ''){
+            $sql .= " AND res_id = $this->res_id";
         }
 
-        if($this->calif_materia != ''){
-            $sql .= " AND res_Materia = $this->calif_materia";
+        if($this->res_materia != ''){
+            $sql .= " AND res_materia = $this->res_materia";
         }
 
         $resultado = self::servir($sql);
@@ -45,14 +45,14 @@ class Calificacion extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE resultados SET res_Alumno = $this->calif_alumno, res_Materia = $this->calif_materia, res_Punteo = $this->calif_punteo, res_Resultado = '$this->calif_resultado' WHERE res_ID = $this->id_calificaciones";
+        $sql = "UPDATE calificaciones SET res_alumno = $this->res_alumno, res_materia = $this->res_materia, res_punteo = $this->res_punteo, res_resultado = '$this->res_resultado' WHERE res_id = $this->res_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
-        $sql = "UPDATE resultados SET detalle_situacion = '0' WHERE res_ID = $this->id_calificaciones";
+        $sql = "UPDATE calificaciones SET detalle_situacion = '0' WHERE res_id = $this->res_id";
         
         $resultado = self::ejecutar($sql);
         return $resultado;
