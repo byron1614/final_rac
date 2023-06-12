@@ -4,30 +4,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">ESCUELA DE INFORMATICA</a>
+            <a class="navbar-brand" href="/final_rac/">ESCUELA DE INFORMATICA</a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">INICIO</a>
+                    <a class="nav-link active" aria-current="page" href="/final_rac/">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        CALIFICACIONES
+                    CALIFICACIONES
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/calificaciones/index.php">INGRESAR RESULTADOS</a>
+                            <a class="nav-link" href="/final_rac/vistas/calificaciones/index.php">INGRESAR CALIFICACIONES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/calificaciones/buscar.php">BUSCAR RESULTADOS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/controladores/calificaciones/detalle_ventas.php">DETALLE DE RESULTADOS</a>
+                            <a class="nav-link" href="/final_rac/vistas/calificaciones/buscar.php">BUSCAR CALIFICACIONES</a>
                         </li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    MATERIAS
+                    MATERIA
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
@@ -44,10 +41,10 @@
                     </a>
                     <ul class="dropdown-menu bg-dark">
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/alumnos/index.php">CREAR ALUMNO</a>
+                            <a class="nav-link" href="/final_rac/vistas/alumnos/index.php">CREAR ALUMNOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/final_rac/vistas/alumnos/buscar.php">BUSCAR ALUMNO</a>
+                            <a class="nav-link" href="/final_rac/vistas/alumnos/buscar.php">BUSCAR ALUMNOS</a>
                         </li>
                     </ul>
                 </li>

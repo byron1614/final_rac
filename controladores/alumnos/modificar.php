@@ -46,7 +46,7 @@ if($_POST['alum_id'] != '' && $_POST['alum_nombre'] != '' && $_POST['alum_apelli
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/final_rac/controladores/alumnos/buscar.php?alum_nombre=<?= $_POST['alum_nombre'] ?>" class="btn btn-info">Volver al formulario</a>
+                <a href="/final_rac/controladores/alumnos/buscar.php?alum_nombre=<?= $_POST['ALUM_NOMBRE'] ?>" class="btn btn-info">Volver al formulario</a>
             </div>
         </div>
     </div>
